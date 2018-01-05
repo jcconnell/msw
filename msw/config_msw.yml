@@ -3,12 +3,6 @@
 # MSW api key
 api_key : '1'
 
-# Target url
-url : 'http://magicseaweed.com/api/'
-
-# Fields to retrieve
-fields : ['timestamp','fadedRating','solidRating']
-
 # Spots you would like forecast data for, {name of spot:msw spot id}
 spots : {'Thurso':47,'SuperTubos':196}
 

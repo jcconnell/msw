@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 import pandas as pd
 # # Unwrap yml goodies
 import yaml
@@ -10,12 +9,14 @@ msw_config = yaml.load(open('./config_msw.yml'))
 surf_spots = msw_config['spots']
 # Personal api key
 api_key = msw_config['api_key']
-# api url stub
-url = msw_config['url']
-# fields you wish to parse
-fields = msw_config['fields']
 # Days you are interested in surfing
 days = msw_config['days']
+
+# Other necessary variables
+# api url stub
+url = 'http://magicseaweed.com/api/'
+# fields to parse
+fields = ['timestamp','fadedRating','solidRating']
 
 # Define functions
 def fieldsToUrl(fields : list):
