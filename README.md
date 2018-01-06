@@ -19,6 +19,7 @@ Running spotCheck.py will then return all surf spots where the surf forecast is 
 In order to run this code you will need to have the following packages:
 
 * [Pandas](https://pandas.pydata.org/pandas-docs/stable/)
+* [matplotlib](https://matplotlib.org/contents.html)
 * [PyYaml](https://github.com/yaml/pyyaml)
 * [Folium](https://github.com/python-visualization/folium)
 * [os](https://docs.python.org/2/library/os.html)
