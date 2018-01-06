@@ -1,5 +1,6 @@
 
 import msw
+import geoVisual as gv
 
 print('Surf Forecast Check 3000\n')
 
@@ -13,4 +14,9 @@ df = msw.scrapeSurfSpots(surf_spots=msw.surf_spots, fields=fields_url)
 if df.empty:
     print('\nNo Suitable days for surf :(')
 else:
+    # Print reply
     print('\nThere is surf! :)\n', df)
+    # Merge forecast data to geographic data
+    df = gv.mergeGeoData(forecast_df = df)
+    # Draw and open geographic visualisation
+    gv.drawSurfMap(df)
