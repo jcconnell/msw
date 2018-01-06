@@ -76,7 +76,7 @@ def processJson(target_url : str, surf_spot : str):
     # Day name from timestamp
     df['weekday'] = df.timestamp.dt.weekday_name
     # Select only days with a "good" swell
-    df = df[(df.fadedRating >= 3) & (df.solidRating >= 3)]
+    df = df[(df.fadedRating >= 1) & (df.solidRating >= 1)]
     # Select days as indicated in config_msw
     if days:
         df = df[df['weekday'].isin(days)]
@@ -109,5 +109,7 @@ def scrapeSurfSpots(surf_spots : dict, fields=None):
         print('\nGetting forecast info for', spot)
         # Access MSW API
         df = pd.concat([df, processJson(target_url=target, surf_spot=spot)])
+        # Reset Index 
+        df = df.reset_index(drop=True)
         
     return df
