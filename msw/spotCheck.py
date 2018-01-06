@@ -2,7 +2,7 @@
 import msw
 import geoVisual as gv
 
-print('Surf Forecast Check 3000\n')
+print('Check Surf Forecasts')
 
 # Create string to add to url to specify which fields to parse
 fields_url = msw.fieldsToUrl(fields=msw.fields)

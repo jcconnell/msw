@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 #%%
+import matplotlib as mpl
 import folium
 import pandas as pd
 import os
@@ -17,22 +18,40 @@ def mergeGeoData(forecast_df : pd.DataFrame):
     df = df.sort_values('solidRating', ascending=False)
     # Drop duplicates
     df = df.drop_duplicates(subset=['spot'])
+    # Reset index
+    df = df.reset_index(drop=True)
     
     return df
+
+def calcColors(values : pd.Series):
+    # Convert series to list
+    values = values.tolist()
+    # Create color for each value in values
+    colors = ["#%02x%02x%02x" % (int(r), int(g), int(b))
+                        for r, g, b, _ in 
+                        255*mpl.cm.OrRd(mpl.colors.Normalize()(values))
+             ]
+    
+    return colors
     
 def drawSurfMap(df : pd.DataFrame):
+    # Calculate color values for color map
+    colors = calcColors(df['solidRating'])
+    
     # Intialise folium
     m = folium.Map([50, 0], zoom_start=4)
     
     # Add a cirlce marker for each spot
     for i, row in df.iterrows():
+        # Define popup text
         popup = row['spot'] + ': ' + str(row['solidRating']) + ' stars'
+        # Add CircleMarker to map for each spot
         folium.CircleMarker(location=[row['longitude'], row['latitude']],
-                            radius=row['solidRating']*4, 
+                            radius=(row['solidRating']**3)**0.5, 
                             fill=True, 
                             popup=popup, 
                             weight=1,
-                            fill_color='Blue',
+                            fill_color=colors[i],
                             color=None,
                             fill_opacity=0.5
                             ).add_to(m)
