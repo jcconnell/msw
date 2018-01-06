@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+import datetime as dt
 # # Unwrap yml goodies
 import yaml
 # Load yaml file
@@ -51,7 +52,7 @@ def targetUrl(spot : str, fields=None):
                 
     return target
 
-def processJson(target_url : str, surf_spot : str):
+def processJson(target_url : str, surf_spot : str, live=True):
     """
     Returns pandas DataFrame as read of json in MSW api with 2 new columns 
     (spot & weekday). DataFrame limited to "good" surf only and days defined 
@@ -65,7 +66,7 @@ def processJson(target_url : str, surf_spot : str):
     
     Returns
     --------
-    df : DataFrane with fields specified in targetUrl, pd.DataFrame
+    df : DataFrame with fields specified in targetUrl, pd.DataFrame
     """
     # pd DataFrame from json
     df = pd.read_json(target_url)
@@ -76,16 +77,28 @@ def processJson(target_url : str, surf_spot : str):
     # Day name from timestamp
     df['weekday'] = df.timestamp.dt.weekday_name
     # Select only days with a "good" swell
-    df = df[(df.fadedRating >= 1) & (df.solidRating >= 1)]
-    # Select days as indicated in config_msw
-    if days:
-        df = df[df['weekday'].isin(days)]
+    df = df[(df.solidRating >= 3)]
+    if live:
+        # Row with value equal to datetime now
+        df['now'] = dt.datetime.now()
+        # Calculate timedelta between now and forecasted date
+        df['delta'] = (df['timestamp'] - df['now'])
+        # Only positive deltas
+        df = df[df['delta'] >= pd.Timedelta(0)]
+        # Drop duplicates keeping only the very next forecast only
+        df = df.drop_duplicates(subset='spot')
+        
+    # If live is false and days is filled: select days as indicated in config_msw
+    else:
+        if days:
+            df = df[df['weekday'].isin(days)]
+            
     # Reset index
     df = df.reset_index(drop=True)
     
     return df
 
-def scrapeSurfSpots(surf_spots : dict, fields=None):
+def scrapeSurfSpots(surf_spots : dict, fields=None, live=True):
     """
     loops through surf_spots and scrapes each json table from its respective 
     api using processJson() and returns a DataFrame with all json tables concatenated.
@@ -108,7 +121,8 @@ def scrapeSurfSpots(surf_spots : dict, fields=None):
         target = targetUrl(spot=surf_spots[spot], fields=fields)
         print('\nGetting forecast info for', spot)
         # Access MSW API
-        df = pd.concat([df, processJson(target_url=target, surf_spot=spot)])
+        df = pd.concat([df, processJson(target_url=target, surf_spot=spot,
+                                        live=live)])
         # Reset Index 
         df = df.reset_index(drop=True)
         

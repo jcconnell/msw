@@ -8,7 +8,9 @@ print('Check Surf Forecasts')
 fields_url = msw.fieldsToUrl(fields=msw.fields)
 
 # Scrape surf spot data
-df = msw.scrapeSurfSpots(surf_spots=msw.surf_spots, fields=fields_url)
+df = msw.scrapeSurfSpots(surf_spots=msw.surf_spots, 
+                         fields=fields_url,
+                         live=True)
     
 # Print Results
 if df.empty:
