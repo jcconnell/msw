@@ -61,6 +61,6 @@ def drawSurfMap(df : pd.DataFrame):
     # Save map as html
     m.save('./surf_spots.html')
     # Open html file in web browser
-    webbrowser.open('file://' + os.path.realpath('./surf_spots.html'))
+    webbrowser.open('file://' + os.path.realpath('../index.html'))
 
 
