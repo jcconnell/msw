@@ -17,7 +17,9 @@ days = msw_config['days']
 # api url stub
 url = 'http://magicseaweed.com/api/'
 # fields to parse
-fields = ['timestamp','fadedRating','solidRating']
+fields = ['timestamp','fadedRating','solidRating','wind.direction',
+          'wind.speed','swell.maxBreakingHeight',
+          'swell.components.combined.period']
 
 # Define functions
 def fieldsToUrl(fields : list):
@@ -52,6 +54,22 @@ def targetUrl(spot : str, fields=None):
                 
     return target
 
+def dictToSeries(df : pd.DataFrame, column : str):
+    # Convert those columns with dictionaries in each row to pd.Series
+    df = pd.concat([df, df[column].apply(pd.Series)], axis=1)
+    df = df.drop(column, axis=1)
+    
+    return df
+
+def parsePeriod(df : pd.DataFrame, column : str):
+    # Extract Period swell from column
+    df[column] = df[column].apply(pd.Series)
+    df[column] = df[column].apply(pd.Series)
+    # Rename colum to period
+    df= df.rename(columns={column:'period'})
+    
+    return df
+
 def processJson(target_url : str, surf_spot : str, live=True):
     """
     Returns pandas DataFrame as read of json in MSW api with 2 new columns 
@@ -72,6 +90,11 @@ def processJson(target_url : str, surf_spot : str, live=True):
     df = pd.read_json(target_url)
     # Report dates in DataFrame
     print('dates:',df.timestamp.dt.date.min(),'to',df.timestamp.dt.date.max())
+    # Convert wind and swell cols from dictionaries to pd.Series
+    df = dictToSeries(df=df, column='wind')
+    df = dictToSeries(df=df, column='swell')
+    # Parse Period info
+    df = parsePeriod(df=df, column='components')
     # Column with spot name
     df['spot'] = surf_spot
     # Day name from timestamp
@@ -127,3 +150,5 @@ def scrapeSurfSpots(surf_spots : dict, fields=None, live=True):
         df = df.reset_index(drop=True)
         
     return df
+
+#%%

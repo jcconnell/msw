@@ -44,10 +44,13 @@ def drawSurfMap(df : pd.DataFrame):
     # Add a cirlce marker for each spot
     for i, row in df.iterrows():
         # Define popup text
-        popup = row['spot'] + ': ' + str(row['solidRating']) + ' stars'
+        popup = (row['spot'] + 
+                 '<br>msw stars: ' + str(row['solidRating']) + 
+                 '<br>wave height: ' + str(row['maxBreakingHeight']) + 'ft' +
+                 ' @ ' + str(row['period']) + 's')
         # Add CircleMarker to map for each spot
         folium.CircleMarker(location=[row['longitude'], row['latitude']],
-                            radius=((row['solidRating']**3)**0.5)*1.5, 
+                            radius=((row['maxBreakingHeight']**3)**0.5)*1.5, 
                             fill=True, 
                             popup=popup, 
                             weight=1,
