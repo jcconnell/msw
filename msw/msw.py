@@ -2,16 +2,13 @@
 
 import pandas as pd
 import datetime as dt
-# # Unwrap yml goodies
 import yaml
-# Load yaml file
-msw_config = yaml.load(open('./config_msw.yml'))
-# Dictionary with spot name and spot_id
-surf_spots = msw_config['spots']
-# Personal api key
-api_key = msw_config['api_key']
-# Days you are interested in surfing
-days = msw_config['days']
+
+# Load surf spot data
+df_spots = pd.read_csv('../data/surfspots.csv',sep=',', 
+                     usecols=['spot','spot_id'])
+# Load Personal api key
+api_key = yaml.load(open('./api_key.yml'))['api_key']
 
 # Other necessary variables
 # api url stub
@@ -70,7 +67,7 @@ def parsePeriod(df : pd.DataFrame, column : str):
     
     return df
 
-def processJson(target_url : str, surf_spot : str, live=True):
+def processJson(target_url : str, surf_spot : str):
     """
     Returns pandas DataFrame as read of json in MSW api with 2 new columns 
     (spot & weekday). DataFrame limited to "good" surf only and days defined 
@@ -101,27 +98,21 @@ def processJson(target_url : str, surf_spot : str, live=True):
     df['weekday'] = df.timestamp.dt.weekday_name
     # Select only days with a "good" swell
     df = df[(df.solidRating >= 3)]
-    if live:
-        # Row with value equal to datetime now
-        df['now'] = dt.datetime.now()
-        # Calculate timedelta between now and forecasted date
-        df['delta'] = (df['timestamp'] - df['now'])
-        # Only positive deltas
-        df = df[df['delta'] >= pd.Timedelta(0)]
-        # Drop duplicates keeping only the very next forecast only
-        df = df.drop_duplicates(subset='spot')
-        
-    # If live is false and days is filled: select days as indicated in config_msw
-    else:
-        if days:
-            df = df[df['weekday'].isin(days)]
+    # Row with value equal to datetime now
+    df['now'] = dt.datetime.now()
+    # Calculate timedelta between now and forecasted date
+    df['delta'] = (df['timestamp'] - df['now'])
+    # Only positive deltas
+    df = df[df['delta'] >= pd.Timedelta(0)]
+    # Drop duplicates keeping only the very next forecast only
+    df = df.drop_duplicates(subset='spot')
             
     # Reset index
     df = df.reset_index(drop=True)
     
     return df
 
-def scrapeSurfSpots(surf_spots : dict, fields=None, live=True):
+def scrapeSurfSpots(fields=None):
     """
     loops through surf_spots and scrapes each json table from its respective 
     api using processJson() and returns a DataFrame with all json tables concatenated.
@@ -139,13 +130,12 @@ def scrapeSurfSpots(surf_spots : dict, fields=None, live=True):
     # Create empty DataFrame
     df = pd.DataFrame([])
     # Retrieve data for each surf spot from msw api
-    for spot in surf_spots:
+    for idx, row in df_spots.iterrows():
         # Create target api url
-        target = targetUrl(spot=surf_spots[spot], fields=fields)
-        print('\nGetting forecast info for', spot)
+        target = targetUrl(spot=row['spot_id'], fields=fields)
+        print('\nGetting forecast info for', row['spot'])
         # Access MSW API
-        df = pd.concat([df, processJson(target_url=target, surf_spot=spot,
-                                        live=live)])
+        df = pd.concat([df, processJson(target_url=target, surf_spot=row['spot_id'])])
         # Reset Index 
         df = df.reset_index(drop=True)
         

@@ -2,15 +2,13 @@
 import msw
 import geoVisual as gv
 
-print('Check Surf Forecasts')
+print('Live MSW Forecast')
 
 # Create string to add to url to specify which fields to parse
 fields_url = msw.fieldsToUrl(fields=msw.fields)
 
 # Scrape surf spot data
-df = msw.scrapeSurfSpots(surf_spots=msw.surf_spots, 
-                         fields=fields_url,
-                         live=True)
+df = msw.scrapeSurfSpots(fields=fields_url)
     
 # Print Results
 if df.empty:
