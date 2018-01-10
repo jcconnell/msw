@@ -11,9 +11,9 @@ msw is powered by Magicseaweed's forecast api, more information can be found [he
 msw is very much a work in progress. There are a number of things to be added to the tool:
 
 * All surf spots need to be added to surf_spots.csv.
-* An arrow indicating local wind direction is to be added to the map.
-* Ideally some tidal information would be included in the map too.
-* Time dimesion to be added so users can see how the forecast develops over the coming days.
+* An arrow indicating local wind direction is to be added to the map for each surf spot.
+* Ideally tidal information would be included in the map too.
+* Time dimesion to be added to the map so users can see how the forecast develops over the coming days.
 
 ## Usage
 Running spotCheck.py will create [index.html](https://github.com/HowardRiddiough/msw/blob/master/index.html).
