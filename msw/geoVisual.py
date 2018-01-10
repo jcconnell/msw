@@ -50,7 +50,7 @@ def drawSurfMap(df : pd.DataFrame):
                  ' @ ' + str(row['period']) + 's')
         # Add CircleMarker to map for each spot
         folium.CircleMarker(location=[row['longitude'], row['latitude']],
-                            radius=((row['maxBreakingHeight']**3)**0.5)*1.5, 
+                            radius=((row['maxBreakingHeight']**3)**0.5)*1.3, 
                             fill=True, 
                             popup=popup, 
                             #weight=1,
