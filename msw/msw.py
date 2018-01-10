@@ -89,25 +89,25 @@ def processJson(target_url : str, spot_name : str):
     df = pd.read_json(target_url)
     # Report dates in DataFrame
     print('dates:',df.timestamp.dt.date.min(),'to',df.timestamp.dt.date.max())
-    # Convert wind and swell cols from dictionaries to pd.Series
-    df = dictToSeries(df=df, column='wind')
-    df = dictToSeries(df=df, column='swell')
-    # Parse Period info
-    df = parsePeriod(df=df, column='components')
     # Column with spot name
     df['spot'] = spot_name
-    # Day name from timestamp
-    df['weekday'] = df.timestamp.dt.weekday_name
-    # Select only days with a "good" swell
-    #df = df[(df.solidRating >= 3)]
     # Row with value equal to datetime now
     df['now'] = dt.datetime.now()
     # Calculate timedelta between now and forecasted date
     df['delta'] = (df['timestamp'] - df['now'])
     # Only positive deltas
     df = df[df['delta'] >= pd.Timedelta(0)]
+    # Sort values by delta, nearest to furthest away
+    df = df.sort_values('delta')
     # Drop duplicates keeping only the very next forecast only
     df = df.drop_duplicates(subset='spot')
+    # Convert wind and swell cols from dictionaries to pd.Series
+    df = dictToSeries(df=df, column='wind')
+    df = dictToSeries(df=df, column='swell')
+    # Parse Period info
+    df = parsePeriod(df=df, column='components')
+    # Select only days with a "good" swell
+    #df = df[(df.solidRating >= 3)]
             
     # Reset index
     df = df.reset_index(drop=True)
