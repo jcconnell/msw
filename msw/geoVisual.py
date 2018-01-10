@@ -39,7 +39,7 @@ def drawSurfMap(df : pd.DataFrame):
     colors = calcColors(df['solidRating'])
     
     # Intialise folium
-    m = folium.Map([50, 0], zoom_start=4, tiles='cartodbpositron')
+    m = folium.Map([50, 0], zoom_start=3.5, tiles='cartodbpositron')
     
     # Add a cirlce marker for each spot
     for i, row in df.iterrows():
@@ -53,13 +53,13 @@ def drawSurfMap(df : pd.DataFrame):
                             radius=((row['maxBreakingHeight']**3)**0.5)*1.5, 
                             fill=True, 
                             popup=popup, 
-                            weight=1,
+                            #weight=1,
                             fill_color=colors[i],
                             color=None,
-                            fill_opacity=0.6
+                            fill_opacity=0.7
                             ).add_to(m)
     # Save map as html
-    m.save('./surf_spots.html')
+    m.save('../index.html')
     # Open html file in web browser
     webbrowser.open('file://' + os.path.realpath('../index.html'))
 

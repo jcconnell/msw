@@ -5,8 +5,9 @@ import datetime as dt
 import yaml
 
 # Load surf spot data
-df_spots = pd.read_csv('../data/surfspots.csv',sep=',', 
-                     usecols=['spot','spot_id'])
+df_spots = pd.read_csv('../data/surfspots.csv',
+                       sep=',', 
+                       usecols=['spot','spot_id'])
 # Load Personal api key
 api_key = yaml.load(open('./api_key.yml'))['api_key']
 
@@ -33,7 +34,9 @@ def fieldsToUrl(fields : list):
     """
     return '&fields=' + ','.join(fields)
 
-def targetUrl(spot : str, fields=None):
+fields = fieldsToUrl(fields)
+
+def targetUrl(spot_id : str, fields=None):
     """
     Returns a target url consisting of msw url, personal api key, spot id and if
     specified some specified fields
@@ -47,7 +50,7 @@ def targetUrl(spot : str, fields=None):
     --------
     target : url of api, str
     """
-    target = url + str(api_key) + '/forecast/?spot_id=' + str(spot) + fields
+    target = url + str(api_key) + '/forecast/?spot_id=' + str(spot_id) + fields
                 
     return target
 
@@ -67,7 +70,7 @@ def parsePeriod(df : pd.DataFrame, column : str):
     
     return df
 
-def processJson(target_url : str, surf_spot : str):
+def processJson(target_url : str, spot_name : str):
     """
     Returns pandas DataFrame as read of json in MSW api with 2 new columns 
     (spot & weekday). DataFrame limited to "good" surf only and days defined 
@@ -76,8 +79,7 @@ def processJson(target_url : str, surf_spot : str):
     Parameters
     --------
     target_url : the api target, str
-    surf_spot : the unique spot identifier as found on msw website. 
-                Example: '10', str
+    spot_name : name of surf spot
     
     Returns
     --------
@@ -93,11 +95,11 @@ def processJson(target_url : str, surf_spot : str):
     # Parse Period info
     df = parsePeriod(df=df, column='components')
     # Column with spot name
-    df['spot'] = surf_spot
+    df['spot'] = spot_name
     # Day name from timestamp
     df['weekday'] = df.timestamp.dt.weekday_name
     # Select only days with a "good" swell
-    df = df[(df.solidRating >= 3)]
+    #df = df[(df.solidRating >= 3)]
     # Row with value equal to datetime now
     df['now'] = dt.datetime.now()
     # Calculate timedelta between now and forecasted date
@@ -112,7 +114,7 @@ def processJson(target_url : str, surf_spot : str):
     
     return df
 
-def scrapeSurfSpots(fields=None):
+def scrapeSurfSpots(fields=fields):
     """
     loops through surf_spots and scrapes each json table from its respective 
     api using processJson() and returns a DataFrame with all json tables concatenated.
@@ -132,10 +134,10 @@ def scrapeSurfSpots(fields=None):
     # Retrieve data for each surf spot from msw api
     for idx, row in df_spots.iterrows():
         # Create target api url
-        target = targetUrl(spot=row['spot_id'], fields=fields)
+        target = targetUrl(spot_id=row['spot_id'], fields=fields)
         print('\nGetting forecast info for', row['spot'])
         # Access MSW API
-        df = pd.concat([df, processJson(target_url=target, surf_spot=row['spot_id'])])
+        df = pd.concat([df, processJson(target_url=target, spot_name=row['spot'])])
         # Reset Index 
         df = df.reset_index(drop=True)
         

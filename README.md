@@ -1,28 +1,32 @@
 # msw
 
 ## Introduction
-msw is a tool that uses the Magicseaweed forecast api to automatically check the surf forecast of all user specified surf breaks. The tool creates a geographic visualisation showing any surf spots where the surf forecast is at least a solid 3 stars.
+msw is a tool that uses the Magicseaweed forecast api to create a web based geographic visulisation of the current surf forecast. The website can be found [here](https://howardriddiough.github.io/msw/).
 
-Keep in mind to use the msw tool you will need apply for a personal API key. That and more information regarding the Magicseaweed api can be found [here](https://magicseaweed.com/developer/api).
+The visulisation includes a bubble for every surf spot listed in [surf_spots.csv](https://github.com/HowardRiddiough/msw/blob/master/data/surfspots.csv). The size of the bubble is determined by the actual wave height and the bubble's color intensity determined by the number of solid stars as provided by Magicseaweed. Each bubble can be clicked to show more information about the surf spot and it's respective foreacst. The idea being to show clearly in one view where the best location to surf at a given moment in time is.
 
-## Configuring msw
-Use config_msw.yml to configure the msw tool. In this yaml file you can define a number of user preferences:
+msw is powered by Magicseaweed's forecast api, more information can be found [here](https://magicseaweed.com/developer/api).
 
-* Your personal API key
-* Surf Spots you want to check
-* The days you wish to surf
+## Work in progress
+msw is very much a work in progress. There are a number of things to be added to the tool:
+
+* All surf spots need to be added to surf_spots.csv.
+* An arrow indicating local wind direction is to be added to the map.
+* Ideally some tidal information would be included in the map too.
+* Time dimesion to be added so users can see how the forecast develops over the coming days.
 
 ## Usage
-Running spotCheck.py will then return all surf spots where the surf forecast is at least a solid 3 stars and the forecasted day matches those days specified in config_msw.yml.
+Running spotCheck.py will create [index.html](https://github.com/HowardRiddiough/msw/blob/master/index.html).
 
 ## Dependancies
 In order to run this code you will need to have the following packages:
 
+* [os](https://docs.python.org/2/library/os.html)
+* [datetime](https://docs.python.org/2/library/datetime.html)
 * [Pandas](https://pandas.pydata.org/pandas-docs/stable/)
 * [matplotlib](https://matplotlib.org/contents.html)
 * [PyYaml](https://github.com/yaml/pyyaml)
 * [Folium](https://github.com/python-visualization/folium)
-* [os](https://docs.python.org/2/library/os.html)
 * [webbrowser](https://docs.python.org/2/library/webbrowser.html)
 
 ## Issue Guidlines
