@@ -16,13 +16,14 @@ if df.empty:
     print('\nNo Suitable days for surf :(')
 else:
     # Print reply
-    print('\nThere is surf! :)\n', df)
+    print('\nThere is surf! :)\n')
     # Merge forecast data to geographic data
     df = gv.mergeGeoData(forecast_df = df)
     # Draw and open geographic visualisation
     gv.drawSurfMap(df)
     
-# Commit and push ressults to remote directory
-autoGit(local_directory='../', 
-        commit_comment='updating index.html',
+# Commit and push index.html to remote directory
+autoGit(local_directory='../',
+        file_to_add='index.html',
+        comment='updating index.html',
         author='HowardRiddiough')
