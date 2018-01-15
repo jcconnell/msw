@@ -1,29 +1,27 @@
-
-import msw
+import utils
+from msw import Msw
 import geoVisual as gv
 from autogit import autoGit
 
 print('Live MSW Forecast')
 
-# Create string to add to url to specify which fields to parse
-fields_url = msw.fieldsToUrl(fields=msw.fields)
+# Intialise msw
+msw = Msw()
 
 # Scrape surf spot data
-df = msw.scrapeSurfSpots()
+df = utils.scrapeSurfSpots(spots=msw.df_spots)
     
 # Print Results
 if df.empty:
     print('\nNo Suitable days for surf :(')
 else:
-    # Print reply
-    print('\nThere is surf! :)\n')
     # Merge forecast data to geographic data
-    df = gv.mergeGeoData(forecast_df = df)
+#    df = gv.mergeGeoData(forecast_df = df)
     # Draw and open geographic visualisation
     gv.drawSurfMap(df)
     
 # Commit and push index.html to remote directory
-autoGit(local_directory='../',
-        file_to_add='index.html',
-        comment='updating index.html',
-        author='HowardRiddiough')
+#autoGit(local_directory='../',
+#        file_to_add='index.html',
+#        comment='updating index.html',
+#        author='HowardRiddiough')

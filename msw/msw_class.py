@@ -1,7 +1,7 @@
 import pandas as pd
 import yaml
 
-class Msw:
+class msw:
     def __init__(self, data=None, api_yml=None):
         # Retrieve api key
         if api_yml == None:
@@ -22,9 +22,19 @@ class Msw:
         if data == None:
             self.data = '../data/surfspots.csv'
         # Load surf spots
-        self.df_spots = pd.read_csv(self.data, sep=',')
+        self.df_spots = pd.read_csv(self.data,
+                                    sep=',', 
+                                    usecols=['spot','spot_id'])
         # Column giving taret api url for each surf spot
         self.df_spots['target'] = (self.url + str(self.api_key) + '/forecast/?spot_id=' + 
                                    self.df_spots['spot_id'].astype(str) + self.fields)
         
         
+        
+#%%
+"""
+TO DO
+- rename this .py >> msw
+- rename msw.py to utils.py
+- re-configure utils so it can scrape spots can be used in spotCheck
+"""
