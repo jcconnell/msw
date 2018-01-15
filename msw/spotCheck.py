@@ -21,7 +21,7 @@ else:
     gv.drawSurfMap(df)
     
 # Commit and push index.html to remote directory
-#autoGit(local_directory='../',
-#        file_to_add='index.html',
-#        comment='updating index.html',
-#        author='HowardRiddiough')
+autoGit(local_directory='../',
+        file_to_add='index.html',
+        comment='updating index.html',
+        author='HowardRiddiough')
