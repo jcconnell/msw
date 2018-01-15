@@ -15,8 +15,6 @@ df = utils.scrapeSurfSpots(spots=msw.df_spots)
 if df.empty:
     print('\nNo Suitable days for surf :(')
 else:
-    # Merge forecast data to geographic data
-#    df = gv.mergeGeoData(forecast_df = df)
     # Draw and open geographic visualisation
     gv.drawSurfMap(df)
     
