@@ -3,7 +3,7 @@ from msw import Msw
 import geoVisual as gv
 from autogit import autoGit
 
-print('Live MSW Forecast')
+print('MSW Visualisation')
 
 # Intialise msw
 msw = Msw()

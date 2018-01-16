@@ -1,10 +1,18 @@
-# -*- coding: utf-8 -*-
-
 import pandas as pd
 import datetime as dt
 
 def dictToSeries(df : pd.DataFrame, column : str):
     """
+    Parses column with a dict to pandas series
+    
+    Parameters
+    --------
+    df : DataFrame containing dictionary, pd.DataFrame
+    column : Column in DataFrame that contains the dictionary, str
+    
+    Returns
+    --------
+    df : pd.DataFrame
     """
     # Convert those columns with dictionaries in each row to pd.Series
     df = pd.concat([df, df[column].apply(pd.Series)], axis=1)
@@ -14,6 +22,16 @@ def dictToSeries(df : pd.DataFrame, column : str):
 
 def parsePeriod(df : pd.DataFrame, column : str):
     """
+    Function specifically built to parse period field from MSW api.
+    
+    Parameters
+    --------
+    df : DataFrame containing dictionary, pd.DataFrame
+    column : Column in DataFrame that contains period field, str
+    
+    Returns
+    --------
+    df : pd.DataFrame
     """
     # Extract Period swell from column
     df[column] = df[column].apply(pd.Series)
@@ -77,7 +95,7 @@ def scrapeSurfSpots(spots : pd.DataFrame):
     api using processJson() and returns a DataFrame with all json tables concatenated.
     Parameters
     --------
-    spots : 
+    spots : DataFrame with spot name, longitude, latitude and spot id
     
     Returns
     --------
