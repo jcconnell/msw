@@ -15,7 +15,7 @@
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     
-            <style> #map_61663b3260a048b8abff5dce5efc7d10 {
+            <style> #map_dfbe35521ce34bef8f97b3363402a1fd {
                 position : relative;
                 width : 100.0%;
                 height: 100.0%;
@@ -27,7 +27,7 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_61663b3260a048b8abff5dce5efc7d10" ></div>
+            <div class="folium-map" id="map_dfbe35521ce34bef8f97b3363402a1fd" ></div>
         
 </body>
 <script>    
@@ -37,8 +37,8 @@
                 var bounds = null;
             
 
-            var map_61663b3260a048b8abff5dce5efc7d10 = L.map(
-                                  'map_61663b3260a048b8abff5dce5efc7d10',
+            var map_dfbe35521ce34bef8f97b3363402a1fd = L.map(
+                                  'map_dfbe35521ce34bef8f97b3363402a1fd',
                                   {center: [50,0],
                                   zoom: 3.5,
                                   maxBounds: bounds,
@@ -49,7 +49,7 @@
             
         
     
-            var tile_layer_e1b00ecc17394ba3a19a0bd0b75f493e = L.tileLayer(
+            var tile_layer_6e989a928eb349dc99c453384dda1522 = L.tileLayer(
                 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
                 {
   "attribution": null,
@@ -59,10 +59,11 @@
   "noWrap": false,
   "subdomains": "abc"
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
         
     
-            var circle_marker_4528176089904cffb4896fce88a43cb8 = L.circleMarker(
+
+            var circle_c6d7f39ddf95447185d651de3be462e6 = L.circle(
                 [58.59898844860911,-3.5093593597412114],
                 {
   "bubblingMouseEvents": true,
@@ -70,32 +71,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#7f0000",
+  "fillColor": "#c81c12",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 6.420078659954253,
+  "radius": 3.139439440409705,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_82e1329dca5544dd9c9aec51950916d1 = L.popup({maxWidth: '300'});
+            var popup_76b30d3adbe74e088736ec4233712404 = L.popup({maxWidth: '300'});
 
             
-                var html_423cf052ad404eada97299bf1a36a040 = $('<div id="html_423cf052ad404eada97299bf1a36a040" style="width: 100.0%; height: 100.0%;">Thurso<br>msw stars: 5<br>wave height: 2.9ft @ 16s</div>')[0];
-                popup_82e1329dca5544dd9c9aec51950916d1.setContent(html_423cf052ad404eada97299bf1a36a040);
+                var html_894cdac3c80047c1aa009e9f431afa34 = $('<div id="html_894cdac3c80047c1aa009e9f431afa34" style="width: 100.0%; height: 100.0%;">Thurso<br>msw stars: 4<br>wave height: 1.8ft @ 13s<br>wind speed: 18mph</div>')[0];
+                popup_76b30d3adbe74e088736ec4233712404.setContent(html_894cdac3c80047c1aa009e9f431afa34);
             
 
-            circle_marker_4528176089904cffb4896fce88a43cb8.bindPopup(popup_82e1329dca5544dd9c9aec51950916d1);
+            circle_c6d7f39ddf95447185d651de3be462e6.bindPopup(popup_76b30d3adbe74e088736ec4233712404);
 
             
         
     
-            var circle_marker_25a389fc24df4c98a7bed3ae370aa066 = L.circleMarker(
+
+            var marker_e9522996da9340ad9221459435164313 = L.marker(
+                [58.59898844860911,-3.5093593597412114],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_cd0ffeb015b84489b1c8cb80b3c0d925 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_e9522996da9340ad9221459435164313.setIcon(custom_icon_cd0ffeb015b84489b1c8cb80b3c0d925);
+            
+    
+
+            var circle_ea2831b0f0514608ba7b1185127d36bf = L.circle(
                 [50.416497,-5.099329],
                 {
   "bubblingMouseEvents": true,
@@ -103,32 +130,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fddcae",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 10.01244775267267,
+  "radius": 5.4500862378498205,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_d0382606c441426e82434347160bda6b = L.popup({maxWidth: '300'});
+            var popup_55c18a16747e45ec87dcdd395a73da12 = L.popup({maxWidth: '300'});
 
             
-                var html_e02a6d91f7d5413ab7f84b71fb5e3ee4 = $('<div id="html_e02a6d91f7d5413ab7f84b71fb5e3ee4" style="width: 100.0%; height: 100.0%;">Fistral<br>msw stars: 1<br>wave height: 3.9ft @ 11s</div>')[0];
-                popup_d0382606c441426e82434347160bda6b.setContent(html_e02a6d91f7d5413ab7f84b71fb5e3ee4);
+                var html_ca5b37a23ea940a088f38da9ad9a2af2 = $('<div id="html_ca5b37a23ea940a088f38da9ad9a2af2" style="width: 100.0%; height: 100.0%;">Fistral<br>msw stars: 0<br>wave height: 2.6ft @ 8s<br>wind speed: 39mph</div>')[0];
+                popup_55c18a16747e45ec87dcdd395a73da12.setContent(html_ca5b37a23ea940a088f38da9ad9a2af2);
             
 
-            circle_marker_25a389fc24df4c98a7bed3ae370aa066.bindPopup(popup_d0382606c441426e82434347160bda6b);
+            circle_ea2831b0f0514608ba7b1185127d36bf.bindPopup(popup_55c18a16747e45ec87dcdd395a73da12);
 
             
         
     
-            var circle_marker_34483560837e474b877f06d31dc68960 = L.circleMarker(
+
+            var marker_5f7b42d85cd644a389c3bd22014a8d85 = L.marker(
+                [50.416497,-5.099329],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_984985324a234f5fbfc755a77df3f06c = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_5f7b42d85cd644a389c3bd22014a8d85.setIcon(custom_icon_984985324a234f5fbfc755a77df3f06c);
+            
+    
+
+            var circle_74d3e2c48b1641f2b991fcaefd43e64d = L.circle(
                 [54.292499,-8.952585000000001],
                 {
   "bubblingMouseEvents": true,
@@ -146,22 +199,48 @@
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_0f2dca13e8a049de9a1bd62ab856e684 = L.popup({maxWidth: '300'});
+            var popup_74ea5c19454b4b4e96df72b0f3e49629 = L.popup({maxWidth: '300'});
 
             
-                var html_c1ad59a0f4154cc0aeaea88bf353a7a6 = $('<div id="html_c1ad59a0f4154cc0aeaea88bf353a7a6" style="width: 100.0%; height: 100.0%;">Easkey<br>msw stars: 1<br>wave height: 5.0ft @ 15s</div>')[0];
-                popup_0f2dca13e8a049de9a1bd62ab856e684.setContent(html_c1ad59a0f4154cc0aeaea88bf353a7a6);
+                var html_9912e71ad7d9446f9cc34ef34763f65f = $('<div id="html_9912e71ad7d9446f9cc34ef34763f65f" style="width: 100.0%; height: 100.0%;">Easkey<br>msw stars: 1<br>wave height: 5.0ft @ 13s<br>wind speed: 22mph</div>')[0];
+                popup_74ea5c19454b4b4e96df72b0f3e49629.setContent(html_9912e71ad7d9446f9cc34ef34763f65f);
             
 
-            circle_marker_34483560837e474b877f06d31dc68960.bindPopup(popup_0f2dca13e8a049de9a1bd62ab856e684);
+            circle_74d3e2c48b1641f2b991fcaefd43e64d.bindPopup(popup_74ea5c19454b4b4e96df72b0f3e49629);
 
             
         
     
-            var circle_marker_908e2b5de3724104b2a29d96ba81602d = L.circleMarker(
+
+            var marker_724f98ccace74281b3bc741a80bfd822 = L.marker(
+                [54.292499,-8.952585000000001],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_476bcdddb4a44eb3bd6e39795fbaa520 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_724f98ccace74281b3bc741a80bfd822.setIcon(custom_icon_476bcdddb4a44eb3bd6e39795fbaa520);
+            
+    
+
+            var circle_185cb2ac7b4b42d2833c87ec26031ab3 = L.circle(
                 [51.642795,-4.803594],
                 {
   "bubblingMouseEvents": true,
@@ -175,26 +254,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 8.512270554910717,
+  "radius": 4.534559515542827,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_82fc8a5899e24718810346678b2e3871 = L.popup({maxWidth: '300'});
+            var popup_00c1eece0bb84f9c8e564beac3e99d72 = L.popup({maxWidth: '300'});
 
             
-                var html_a8358995fd364ff888698f09472fc71f = $('<div id="html_a8358995fd364ff888698f09472fc71f" style="width: 100.0%; height: 100.0%;">Manorbier<br>msw stars: 0<br>wave height: 3.5ft @ 10s</div>')[0];
-                popup_82fc8a5899e24718810346678b2e3871.setContent(html_a8358995fd364ff888698f09472fc71f);
+                var html_bbe00248a4bf48f59b1214af29182035 = $('<div id="html_bbe00248a4bf48f59b1214af29182035" style="width: 100.0%; height: 100.0%;">Manorbier<br>msw stars: 0<br>wave height: 2.3ft @ 8s<br>wind speed: 49mph</div>')[0];
+                popup_00c1eece0bb84f9c8e564beac3e99d72.setContent(html_bbe00248a4bf48f59b1214af29182035);
             
 
-            circle_marker_908e2b5de3724104b2a29d96ba81602d.bindPopup(popup_82fc8a5899e24718810346678b2e3871);
+            circle_185cb2ac7b4b42d2833c87ec26031ab3.bindPopup(popup_00c1eece0bb84f9c8e564beac3e99d72);
 
             
         
     
-            var circle_marker_cfdd1be28a314d06a9c6455e4d2e68d9 = L.circleMarker(
+
+            var marker_c63f15a0b4b64256b470f35cb12e8eba = L.marker(
+                [51.642795,-4.803594],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_84f4015846114739865a2e64292027a1 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_c63f15a0b4b64256b470f35cb12e8eba.setIcon(custom_icon_84f4015846114739865a2e64292027a1);
+            
+    
+
+            var circle_9bab5dd08b5c47ac9b84e354d89fc43e = L.circle(
                 [41.677002,-8.829828],
                 {
   "bubblingMouseEvents": true,
@@ -202,32 +307,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#7f0000",
+  "fillColor": "#c81c12",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 12.409724009823911,
+  "radius": 6.420078659954253,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_2c84ffcdce3f4767978c34baacbaaa46 = L.popup({maxWidth: '300'});
+            var popup_f89d97b89eb24573ac34c855aa7f645a = L.popup({maxWidth: '300'});
 
             
-                var html_76f92b8275c148918fdce9919955b88b = $('<div id="html_76f92b8275c148918fdce9919955b88b" style="width: 100.0%; height: 100.0%;">Carbedelo<br>msw stars: 5<br>wave height: 4.5ft @ 18s</div>')[0];
-                popup_2c84ffcdce3f4767978c34baacbaaa46.setContent(html_76f92b8275c148918fdce9919955b88b);
+                var html_8d1064b44eb646f799227a508b31a462 = $('<div id="html_8d1064b44eb646f799227a508b31a462" style="width: 100.0%; height: 100.0%;">Carbedelo<br>msw stars: 4<br>wave height: 2.9ft @ 14s<br>wind speed: 26mph</div>')[0];
+                popup_f89d97b89eb24573ac34c855aa7f645a.setContent(html_8d1064b44eb646f799227a508b31a462);
             
 
-            circle_marker_cfdd1be28a314d06a9c6455e4d2e68d9.bindPopup(popup_2c84ffcdce3f4767978c34baacbaaa46);
+            circle_9bab5dd08b5c47ac9b84e354d89fc43e.bindPopup(popup_f89d97b89eb24573ac34c855aa7f645a);
 
             
         
     
-            var circle_marker_ad91ebd5d1d74863a1238611e6708f16 = L.circleMarker(
+
+            var marker_cbd8cdeae128497c92690e510d2b7f31 = L.marker(
+                [41.677002,-8.829828],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_dcb3e9b5394c446e85421eb101f3d39a = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_cbd8cdeae128497c92690e510d2b7f31.setIcon(custom_icon_dcb3e9b5394c446e85421eb101f3d39a);
+            
+    
+
+            var circle_60022f5c3af94024ac29884d59eec567 = L.circle(
                 [43.009696999999996,-9.26246],
                 {
   "bubblingMouseEvents": true,
@@ -235,32 +366,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#f16d4b",
+  "fillColor": "#7f0000",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 4.534559515542827,
+  "radius": 2.388252499213599,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_84e59ddbb2cc4bbd8e33b954247d6443 = L.popup({maxWidth: '300'});
+            var popup_617b3ba8ea3840d78863de6c5fcae529 = L.popup({maxWidth: '300'});
 
             
-                var html_b54ecbc4357c46498deaaae3f39449cf = $('<div id="html_b54ecbc4357c46498deaaae3f39449cf" style="width: 100.0%; height: 100.0%;">Nemina<br>msw stars: 3<br>wave height: 2.3ft @ 17s</div>')[0];
-                popup_84e59ddbb2cc4bbd8e33b954247d6443.setContent(html_b54ecbc4357c46498deaaae3f39449cf);
+                var html_84fdb7e43d114cb1a0fd1daea913cb54 = $('<div id="html_84fdb7e43d114cb1a0fd1daea913cb54" style="width: 100.0%; height: 100.0%;">Nemina<br>msw stars: 5<br>wave height: 1.5ft @ 14s<br>wind speed: 20mph</div>')[0];
+                popup_617b3ba8ea3840d78863de6c5fcae529.setContent(html_84fdb7e43d114cb1a0fd1daea913cb54);
             
 
-            circle_marker_ad91ebd5d1d74863a1238611e6708f16.bindPopup(popup_84e59ddbb2cc4bbd8e33b954247d6443);
+            circle_60022f5c3af94024ac29884d59eec567.bindPopup(popup_617b3ba8ea3840d78863de6c5fcae529);
 
             
         
     
-            var circle_marker_e9b49ecbf1e74d7bb12f823f08ae7e1b = L.circleMarker(
+
+            var marker_2cdab9987b664b989b30cb1b2c51a1c0 = L.marker(
+                [43.009696999999996,-9.26246],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_e696b9fe7852424388e59f7d5b4be52c = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_2cdab9987b664b989b30cb1b2c51a1c0.setIcon(custom_icon_e696b9fe7852424388e59f7d5b4be52c);
+            
+    
+
+            var circle_14168d0a80cd43c3bbc003b48ab6cd62 = L.circle(
                 [43.502615000000006,-1.541727],
                 {
   "bubblingMouseEvents": true,
@@ -268,32 +425,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#7f0000",
+  "fillColor": "#fddcae",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 14.534441853748634,
+  "radius": 9.252219733663917,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_8543b73722f24c6dab16b7d9215a1b06 = L.popup({maxWidth: '300'});
+            var popup_d6104a4f19a3486185b0ec40314fd9df = L.popup({maxWidth: '300'});
 
             
-                var html_59969cc4b92348258b87c31402a0d3b4 = $('<div id="html_59969cc4b92348258b87c31402a0d3b4" style="width: 100.0%; height: 100.0%;">Sables Dor<br>msw stars: 5<br>wave height: 5.0ft @ 18s</div>')[0];
-                popup_8543b73722f24c6dab16b7d9215a1b06.setContent(html_59969cc4b92348258b87c31402a0d3b4);
+                var html_7de004d7b22d414886603d869af3786c = $('<div id="html_7de004d7b22d414886603d869af3786c" style="width: 100.0%; height: 100.0%;">Sables Dor<br>msw stars: 1<br>wave height: 3.7ft @ 14s<br>wind speed: 16mph</div>')[0];
+                popup_d6104a4f19a3486185b0ec40314fd9df.setContent(html_7de004d7b22d414886603d869af3786c);
             
 
-            circle_marker_e9b49ecbf1e74d7bb12f823f08ae7e1b.bindPopup(popup_8543b73722f24c6dab16b7d9215a1b06);
+            circle_14168d0a80cd43c3bbc003b48ab6cd62.bindPopup(popup_d6104a4f19a3486185b0ec40314fd9df);
 
             
         
     
-            var circle_marker_ffa289126a8f4426ac42324f46345af0 = L.circleMarker(
+
+            var marker_fc590f87af5042fea25ec2e55f3333ec = L.marker(
+                [43.502615000000006,-1.541727],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_ffe292990d354d1db76ea7183eea4764 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_fc590f87af5042fea25ec2e55f3333ec.setIcon(custom_icon_ffe292990d354d1db76ea7183eea4764);
+            
+    
+
+            var circle_e34672b5868b45c88cc9330de955b9c4 = L.circle(
                 [46.388952,-1.4940069999999999],
                 {
   "bubblingMouseEvents": true,
@@ -301,32 +484,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fff7ec",
+  "fillColor": "#fcb17b",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 6.0908849931680695,
+  "radius": 2.6310150132600922,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_4242424319044da1be273dab42c9d080 = L.popup({maxWidth: '300'});
+            var popup_4dafc7cfa1874dd1a3a650a7b6bf7f08 = L.popup({maxWidth: '300'});
 
             
-                var html_b0c0928a2b734bfaa8bff021e922b8e0 = $('<div id="html_b0c0928a2b734bfaa8bff021e922b8e0" style="width: 100.0%; height: 100.0%;">Les Conches<br>msw stars: 0<br>wave height: 2.8ft @ 9s</div>')[0];
-                popup_4242424319044da1be273dab42c9d080.setContent(html_b0c0928a2b734bfaa8bff021e922b8e0);
+                var html_48d1d7eed8654f7394a255840bb4cde9 = $('<div id="html_48d1d7eed8654f7394a255840bb4cde9" style="width: 100.0%; height: 100.0%;">Les Conches<br>msw stars: 2<br>wave height: 1.6ft @ 14s<br>wind speed: 35mph</div>')[0];
+                popup_4dafc7cfa1874dd1a3a650a7b6bf7f08.setContent(html_48d1d7eed8654f7394a255840bb4cde9);
             
 
-            circle_marker_ffa289126a8f4426ac42324f46345af0.bindPopup(popup_4242424319044da1be273dab42c9d080);
+            circle_e34672b5868b45c88cc9330de955b9c4.bindPopup(popup_4dafc7cfa1874dd1a3a650a7b6bf7f08);
 
             
         
     
-            var circle_marker_a2b441f39d414800854ee53998225043 = L.circleMarker(
+
+            var marker_5c2ff2cf525348948c4a8e79fbe996c7 = L.marker(
+                [46.388952,-1.4940069999999999],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_705a136f10054732a8fe0f72af77d1b8 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_5c2ff2cf525348948c4a8e79fbe996c7.setIcon(custom_icon_705a136f10054732a8fe0f72af77d1b8);
+            
+    
+
+            var circle_1f03f52236e645c7b4f38353e9a0b44d = L.circle(
                 [47.836821,-4.35409],
                 {
   "bubblingMouseEvents": true,
@@ -340,26 +549,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 16.76823634136876,
+  "radius": 10.01244775267267,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_ba12070a364b4482bfefa01792eb370c = L.popup({maxWidth: '300'});
+            var popup_299d53737abc4fa38ce558b65878a4e9 = L.popup({maxWidth: '300'});
 
             
-                var html_acffe9564f8c48e7816272d8089b66bf = $('<div id="html_acffe9564f8c48e7816272d8089b66bf" style="width: 100.0%; height: 100.0%;">La Torche<br>msw stars: 1<br>wave height: 5.5ft @ 15s</div>')[0];
-                popup_ba12070a364b4482bfefa01792eb370c.setContent(html_acffe9564f8c48e7816272d8089b66bf);
+                var html_bdce9bdf36b34a2a9dc2c9a6e4e28f0d = $('<div id="html_bdce9bdf36b34a2a9dc2c9a6e4e28f0d" style="width: 100.0%; height: 100.0%;">La Torche<br>msw stars: 1<br>wave height: 3.9ft @ 13s<br>wind speed: 36mph</div>')[0];
+                popup_299d53737abc4fa38ce558b65878a4e9.setContent(html_bdce9bdf36b34a2a9dc2c9a6e4e28f0d);
             
 
-            circle_marker_a2b441f39d414800854ee53998225043.bindPopup(popup_ba12070a364b4482bfefa01792eb370c);
+            circle_1f03f52236e645c7b4f38353e9a0b44d.bindPopup(popup_299d53737abc4fa38ce558b65878a4e9);
 
             
         
     
-            var circle_marker_d2254ecf5ccf4ffe88e6b9e8fe0cc761 = L.circleMarker(
+
+            var marker_e8a61e2cc4364952bc06dfa334b085ef = L.marker(
+                [47.836821,-4.35409],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_4c19e72ccc9449e69531b593cafa3c6d = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_e8a61e2cc4364952bc06dfa334b085ef.setIcon(custom_icon_4c19e72ccc9449e69531b593cafa3c6d);
+            
+    
+
+            var circle_ab21be176eb7417c8f387a62e39369a8 = L.circle(
                 [39.33778264384117,-9.360136985778807],
                 {
   "bubblingMouseEvents": true,
@@ -373,26 +608,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 11.998373223066537,
+  "radius": 6.0908849931680695,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_33cab05ef9814e848634591d1bcff95f = L.popup({maxWidth: '300'});
+            var popup_e98e8e2ef5c9413c83c1429794dbf5a9 = L.popup({maxWidth: '300'});
 
             
-                var html_dda02c92e0c54f36bbf4eefed28ae221 = $('<div id="html_dda02c92e0c54f36bbf4eefed28ae221" style="width: 100.0%; height: 100.0%;">Supertubos<br>msw stars: 4<br>wave height: 4.4ft @ 18s</div>')[0];
-                popup_33cab05ef9814e848634591d1bcff95f.setContent(html_dda02c92e0c54f36bbf4eefed28ae221);
+                var html_366dba878ca44b64957019223b05e756 = $('<div id="html_366dba878ca44b64957019223b05e756" style="width: 100.0%; height: 100.0%;">Supertubos<br>msw stars: 4<br>wave height: 2.8ft @ 14s<br>wind speed: 35mph</div>')[0];
+                popup_e98e8e2ef5c9413c83c1429794dbf5a9.setContent(html_366dba878ca44b64957019223b05e756);
             
 
-            circle_marker_d2254ecf5ccf4ffe88e6b9e8fe0cc761.bindPopup(popup_33cab05ef9814e848634591d1bcff95f);
+            circle_ab21be176eb7417c8f387a62e39369a8.bindPopup(popup_e98e8e2ef5c9413c83c1429794dbf5a9);
 
             
         
     
-            var circle_marker_037a3955bb6e4f48851196586f1b6d76 = L.circleMarker(
+
+            var marker_9db12edf3569454699be8e1d5dcd0e48 = L.marker(
+                [39.33778264384117,-9.360136985778807],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_e2f6a8262a5d47b6853fc57baefb6cf5 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_9db12edf3569454699be8e1d5dcd0e48.setIcon(custom_icon_e2f6a8262a5d47b6853fc57baefb6cf5);
+            
+    
+
+            var circle_e3a40e5f59f245108813525c922777bb = L.circle(
                 [28.750560999999998,-13.83521],
                 {
   "bubblingMouseEvents": true,
@@ -406,26 +667,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 10.792427437791739,
+  "radius": 8.150077300246911,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_c0b782597dff490c928436e6fffbf2d0 = L.popup({maxWidth: '300'});
+            var popup_31d876b32d3d4fcd971b27acf7062045 = L.popup({maxWidth: '300'});
 
             
-                var html_a36694c95a164179adcd84cdb77ed943 = $('<div id="html_a36694c95a164179adcd84cdb77ed943" style="width: 100.0%; height: 100.0%;">Los Lobos<br>msw stars: 1<br>wave height: 4.1ft @ 21s</div>')[0];
-                popup_c0b782597dff490c928436e6fffbf2d0.setContent(html_a36694c95a164179adcd84cdb77ed943);
+                var html_7ced91662dcf457db7c0d7d5626276e4 = $('<div id="html_7ced91662dcf457db7c0d7d5626276e4" style="width: 100.0%; height: 100.0%;">Los Lobos<br>msw stars: 1<br>wave height: 3.4ft @ 16s<br>wind speed: 29mph</div>')[0];
+                popup_31d876b32d3d4fcd971b27acf7062045.setContent(html_7ced91662dcf457db7c0d7d5626276e4);
             
 
-            circle_marker_037a3955bb6e4f48851196586f1b6d76.bindPopup(popup_c0b782597dff490c928436e6fffbf2d0);
+            circle_e3a40e5f59f245108813525c922777bb.bindPopup(popup_31d876b32d3d4fcd971b27acf7062045);
 
             
         
     
-            var circle_marker_0d2fce65a67e4daf8fd4b3362dd02d76 = L.circleMarker(
+
+            var marker_4c808fb3ca914edb9daba256477e0355 = L.marker(
+                [28.750560999999998,-13.83521],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_9d2ca827d84a416b843c9a2f0ac13cbd = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_4c808fb3ca914edb9daba256477e0355.setIcon(custom_icon_9d2ca827d84a416b843c9a2f0ac13cbd);
+            
+    
+
+            var circle_720a90c162a84b6bbd03da06ae6c2a73 = L.circle(
                 [32.737025,-17.212566],
                 {
   "bubblingMouseEvents": true,
@@ -439,26 +726,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 6.420078659954253,
+  "radius": 3.6769552621700474,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_ddc785dc710f46d990052f589e4a5cc0 = L.popup({maxWidth: '300'});
+            var popup_c51b322ed01c41349a7d89ad297498c8 = L.popup({maxWidth: '300'});
 
             
-                var html_674e78a45dc642f48cb1591db5b5a26e = $('<div id="html_674e78a45dc642f48cb1591db5b5a26e" style="width: 100.0%; height: 100.0%;">Jardim do Mar<br>msw stars: 3<br>wave height: 2.9ft @ 19s</div>')[0];
-                popup_ddc785dc710f46d990052f589e4a5cc0.setContent(html_674e78a45dc642f48cb1591db5b5a26e);
+                var html_a2d07427fbe843539a228dc412e094fd = $('<div id="html_a2d07427fbe843539a228dc412e094fd" style="width: 100.0%; height: 100.0%;">Jardim do Mar<br>msw stars: 3<br>wave height: 2.0ft @ 15s<br>wind speed: 25mph</div>')[0];
+                popup_c51b322ed01c41349a7d89ad297498c8.setContent(html_a2d07427fbe843539a228dc412e094fd);
             
 
-            circle_marker_0d2fce65a67e4daf8fd4b3362dd02d76.bindPopup(popup_ddc785dc710f46d990052f589e4a5cc0);
+            circle_720a90c162a84b6bbd03da06ae6c2a73.bindPopup(popup_c51b322ed01c41349a7d89ad297498c8);
 
             
         
     
-            var circle_marker_2a890109b44941f2a782021a51137f0d = L.circleMarker(
+
+            var marker_a2e87b4f234c4c0f92161423d9ba4a3c = L.marker(
+                [32.737025,-17.212566],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_a3df9967903d4b5490202151f0e32b05 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_a2e87b4f234c4c0f92161423d9ba4a3c.setIcon(custom_icon_a3df9967903d4b5490202151f0e32b05);
+            
+    
+
+            var circle_50f5aae9cbbd4c7c90b512815ad2b360 = L.circle(
                 [43.674652,-1.441545],
                 {
   "bubblingMouseEvents": true,
@@ -466,32 +779,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#c81c12",
+  "fillColor": "#fddcae",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 16.76823634136876,
+  "radius": 10.4,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_66aec7e6907243989cbc7cf2ea74ab16 = L.popup({maxWidth: '300'});
+            var popup_3e0b27bc94bc4352911a0eae6b3af9c7 = L.popup({maxWidth: '300'});
 
             
-                var html_8267032114a4481882ba82052e6166a8 = $('<div id="html_8267032114a4481882ba82052e6166a8" style="width: 100.0%; height: 100.0%;">La Graviere<br>msw stars: 4<br>wave height: 5.5ft @ 18s</div>')[0];
-                popup_66aec7e6907243989cbc7cf2ea74ab16.setContent(html_8267032114a4481882ba82052e6166a8);
+                var html_ef20788678cc4793a1fbf35969ee2c84 = $('<div id="html_ef20788678cc4793a1fbf35969ee2c84" style="width: 100.0%; height: 100.0%;">La Graviere<br>msw stars: 1<br>wave height: 4.0ft @ 14s<br>wind speed: 16mph</div>')[0];
+                popup_3e0b27bc94bc4352911a0eae6b3af9c7.setContent(html_ef20788678cc4793a1fbf35969ee2c84);
             
 
-            circle_marker_2a890109b44941f2a782021a51137f0d.bindPopup(popup_66aec7e6907243989cbc7cf2ea74ab16);
+            circle_50f5aae9cbbd4c7c90b512815ad2b360.bindPopup(popup_3e0b27bc94bc4352911a0eae6b3af9c7);
 
             
         
     
-            var circle_marker_cde8a1d670834859a247d40cb0b6f5c6 = L.circleMarker(
+
+            var marker_1bb9ca479f7a4d34ae0aa95db1497f98 = L.marker(
+                [43.674652,-1.441545],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_5f7945508e854c2eb66f6a61bda0f26c = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_1bb9ca479f7a4d34ae0aa95db1497f98.setIcon(custom_icon_5f7945508e854c2eb66f6a61bda0f26c);
+            
+    
+
+            var circle_f0f7e74ab5734b7f849b486b618591ff = L.circle(
                 [39.001853000000004,-9.427324],
                 {
   "bubblingMouseEvents": true,
@@ -505,26 +844,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 16.76823634136876,
+  "radius": 8.512270554910717,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_2ae5107b3bd94c70a1c1d749f44f37a9 = L.popup({maxWidth: '300'});
+            var popup_48c23c54b2ec4d96a2dbf47a9e853a3d = L.popup({maxWidth: '300'});
 
             
-                var html_c954a2a3361f42c6ac0f9c19ad49a7b9 = $('<div id="html_c954a2a3361f42c6ac0f9c19ad49a7b9" style="width: 100.0%; height: 100.0%;">Coxos<br>msw stars: 4<br>wave height: 5.5ft @ 18s</div>')[0];
-                popup_2ae5107b3bd94c70a1c1d749f44f37a9.setContent(html_c954a2a3361f42c6ac0f9c19ad49a7b9);
+                var html_845445db5e2a4379943d2f8688898104 = $('<div id="html_845445db5e2a4379943d2f8688898104" style="width: 100.0%; height: 100.0%;">Coxos<br>msw stars: 4<br>wave height: 3.5ft @ 15s<br>wind speed: 33mph</div>')[0];
+                popup_48c23c54b2ec4d96a2dbf47a9e853a3d.setContent(html_845445db5e2a4379943d2f8688898104);
             
 
-            circle_marker_cde8a1d670834859a247d40cb0b6f5c6.bindPopup(popup_2ae5107b3bd94c70a1c1d749f44f37a9);
+            circle_f0f7e74ab5734b7f849b486b618591ff.bindPopup(popup_48c23c54b2ec4d96a2dbf47a9e853a3d);
 
             
         
     
-            var circle_marker_bd05761b058f48cf894db3ef9e08ebf1 = L.circleMarker(
+
+            var marker_b48c56d2e2b44b2a8e418cb504569b50 = L.marker(
+                [39.001853000000004,-9.427324],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_bbd20c2fda8b486dbb6ac8155e2dfd74 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_b48c56d2e2b44b2a8e418cb504569b50.setIcon(custom_icon_bbd20c2fda8b486dbb6ac8155e2dfd74);
+            
+    
+
+            var circle_6a1f8f064642476e89e8cee5c2a7fd88 = L.circle(
                 [39.387273,-9.297724],
                 {
   "bubblingMouseEvents": true,
@@ -532,32 +897,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#f16d4b",
+  "fillColor": "#fddcae",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 19.10601999370879,
+  "radius": 10.4,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_0f00ef20dd9f4711b21d7c9aa0d8cfcb = L.popup({maxWidth: '300'});
+            var popup_2e9c9a82a80c473e813ba6e624d667eb = L.popup({maxWidth: '300'});
 
             
-                var html_eed5715ef77e4364a6199ad0f9eddee5 = $('<div id="html_eed5715ef77e4364a6199ad0f9eddee5" style="width: 100.0%; height: 100.0%;">Pico da Mota<br>msw stars: 3<br>wave height: 6.0ft @ 18s</div>')[0];
-                popup_0f00ef20dd9f4711b21d7c9aa0d8cfcb.setContent(html_eed5715ef77e4364a6199ad0f9eddee5);
+                var html_275bb0523acd44098052ca74be015877 = $('<div id="html_275bb0523acd44098052ca74be015877" style="width: 100.0%; height: 100.0%;">Pico da Mota<br>msw stars: 1<br>wave height: 4.0ft @ 14s<br>wind speed: 35mph</div>')[0];
+                popup_2e9c9a82a80c473e813ba6e624d667eb.setContent(html_275bb0523acd44098052ca74be015877);
             
 
-            circle_marker_bd05761b058f48cf894db3ef9e08ebf1.bindPopup(popup_0f00ef20dd9f4711b21d7c9aa0d8cfcb);
+            circle_6a1f8f064642476e89e8cee5c2a7fd88.bindPopup(popup_2e9c9a82a80c473e813ba6e624d667eb);
 
             
         
     
-            var circle_marker_22fff793948f428cb15ac0701d7ede62 = L.circleMarker(
+
+            var marker_742170a20db04098a724af1629b200a6 = L.marker(
+                [39.387273,-9.297724],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_877fcc80b99e4bf5b6b44996e754b71c = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_742170a20db04098a724af1629b200a6.setIcon(custom_icon_877fcc80b99e4bf5b6b44996e754b71c);
+            
+    
+
+            var circle_c8e9c9630a7a43fe9b15fdbc890a71c7 = L.circle(
                 [37.046572999999995,-8.871758999999999],
                 {
   "bubblingMouseEvents": true,
@@ -565,32 +956,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#7f0000",
+  "fillColor": "#c81c12",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 0.21361179742701483,
+  "radius": 0.45961940777125593,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_c026f1a3876f4d5c919d7380ccfed044 = L.popup({maxWidth: '300'});
+            var popup_ebeb66041f9f477da0cc65cd9012d2bf = L.popup({maxWidth: '300'});
 
             
-                var html_0f6bf3d1bdc34f6f9dea1c538ab031fd = $('<div id="html_0f6bf3d1bdc34f6f9dea1c538ab031fd" style="width: 100.0%; height: 100.0%;">Zavial<br>msw stars: 5<br>wave height: 0.30000000000000004ft @ 19s</div>')[0];
-                popup_c026f1a3876f4d5c919d7380ccfed044.setContent(html_0f6bf3d1bdc34f6f9dea1c538ab031fd);
+                var html_a5c6b9a0730047fcab975627c2ede855 = $('<div id="html_a5c6b9a0730047fcab975627c2ede855" style="width: 100.0%; height: 100.0%;">Zavial<br>msw stars: 4<br>wave height: 0.5ft @ 15s<br>wind speed: 23mph</div>')[0];
+                popup_ebeb66041f9f477da0cc65cd9012d2bf.setContent(html_a5c6b9a0730047fcab975627c2ede855);
             
 
-            circle_marker_22fff793948f428cb15ac0701d7ede62.bindPopup(popup_c026f1a3876f4d5c919d7380ccfed044);
+            circle_c8e9c9630a7a43fe9b15fdbc890a71c7.bindPopup(popup_ebeb66041f9f477da0cc65cd9012d2bf);
 
             
         
     
-            var circle_marker_aacde11bf18b4bc387a0bfb1d88a6023 = L.circleMarker(
+
+            var marker_3570c1dcccad4dd0821e93407171d108 = L.marker(
+                [37.046572999999995,-8.871758999999999],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_48d6f48a74df43f2bc112ac8ca65482a = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_3570c1dcccad4dd0821e93407171d108.setIcon(custom_icon_48d6f48a74df43f2bc112ac8ca65482a);
+            
+    
+
+            var circle_85d1ff5f7fcc462c853dd35db4db5f0b = L.circle(
                 [43.410899,-2.696567],
                 {
   "bubblingMouseEvents": true,
@@ -604,26 +1021,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 11.591670716510196,
+  "radius": 7.095547195248582,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_187c725902274de085be302af29933ea = L.popup({maxWidth: '300'});
+            var popup_8d2a6e5bd9eb45a48db67e30cc9966a2 = L.popup({maxWidth: '300'});
 
             
-                var html_f88be6bdae3044e0afed22cc83d3485e = $('<div id="html_f88be6bdae3044e0afed22cc83d3485e" style="width: 100.0%; height: 100.0%;">Mundaka<br>msw stars: 5<br>wave height: 4.3ft @ 18s</div>')[0];
-                popup_187c725902274de085be302af29933ea.setContent(html_f88be6bdae3044e0afed22cc83d3485e);
+                var html_1b150eb0de1e415780af203273130519 = $('<div id="html_1b150eb0de1e415780af203273130519" style="width: 100.0%; height: 100.0%;">Mundaka<br>msw stars: 5<br>wave height: 3.1ft @ 14s<br>wind speed: 24mph</div>')[0];
+                popup_8d2a6e5bd9eb45a48db67e30cc9966a2.setContent(html_1b150eb0de1e415780af203273130519);
             
 
-            circle_marker_aacde11bf18b4bc387a0bfb1d88a6023.bindPopup(popup_187c725902274de085be302af29933ea);
+            circle_85d1ff5f7fcc462c853dd35db4db5f0b.bindPopup(popup_8d2a6e5bd9eb45a48db67e30cc9966a2);
 
             
         
     
-            var circle_marker_c67371e4c5984b92ad53a3ac4e7ed8b8 = L.circleMarker(
+
+            var marker_4583b2cc39f04df2888789772be0444a = L.marker(
+                [43.410899,-2.696567],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_af2e9d930b534dba9ced948a129aa88f = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_4583b2cc39f04df2888789772be0444a.setIcon(custom_icon_af2e9d930b534dba9ced948a129aa88f);
+            
+    
+
+            var circle_8736f36229be4987b8a283886055819b = L.circle(
                 [50.082667,-5.3203629999999995],
                 {
   "bubblingMouseEvents": true,
@@ -631,32 +1074,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#f16d4b",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 10.4,
+  "radius": 4.24206553461872,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_c1bb26a3b5604e2ca426f9e76757a231 = L.popup({maxWidth: '300'});
+            var popup_9bb2d45100a74b8086ebb0aec545cefb = L.popup({maxWidth: '300'});
 
             
-                var html_ee68af49e35144e6add41b8672498602 = $('<div id="html_ee68af49e35144e6add41b8672498602" style="width: 100.0%; height: 100.0%;">Porthleven<br>msw stars: 3<br>wave height: 4.0ft @ 11s</div>')[0];
-                popup_c1bb26a3b5604e2ca426f9e76757a231.setContent(html_ee68af49e35144e6add41b8672498602);
+                var html_65e865b891cf4890b6b15d2ea0e8631a = $('<div id="html_65e865b891cf4890b6b15d2ea0e8631a" style="width: 100.0%; height: 100.0%;">Porthleven<br>msw stars: 0<br>wave height: 2.2ft @ 9s<br>wind speed: 44mph</div>')[0];
+                popup_9bb2d45100a74b8086ebb0aec545cefb.setContent(html_65e865b891cf4890b6b15d2ea0e8631a);
             
 
-            circle_marker_c67371e4c5984b92ad53a3ac4e7ed8b8.bindPopup(popup_c1bb26a3b5604e2ca426f9e76757a231);
+            circle_8736f36229be4987b8a283886055819b.bindPopup(popup_9bb2d45100a74b8086ebb0aec545cefb);
 
             
         
     
-            var circle_marker_d92830f4f2474f1b9fcfc0950208001e = L.circleMarker(
+
+            var marker_197d178f8fa74dd3bd7544fb0b99d228 = L.marker(
+                [50.082667,-5.3203629999999995],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_6d16d09dd86448808a8cd1e45a0ce445 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_197d178f8fa74dd3bd7544fb0b99d228.setIcon(custom_icon_6d16d09dd86448808a8cd1e45a0ce445);
+            
+    
+
+            var circle_8f17d181d6ab4a8ba243d87c64446cea = L.circle(
                 [30.545198,-9.726952],
                 {
   "bubblingMouseEvents": true,
@@ -670,26 +1139,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 8.512270554910717,
+  "radius": 5.4500862378498205,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_bc7541a3bfc040a1876f517f1620e9b7 = L.popup({maxWidth: '300'});
+            var popup_e4c79c97d2c14c63a854759e4cf2c22e = L.popup({maxWidth: '300'});
 
             
-                var html_bf3dec7567da4632afbfcd2b95856670 = $('<div id="html_bf3dec7567da4632afbfcd2b95856670" style="width: 100.0%; height: 100.0%;">Anchor Point<br>msw stars: 5<br>wave height: 3.5ft @ 21s</div>')[0];
-                popup_bc7541a3bfc040a1876f517f1620e9b7.setContent(html_bf3dec7567da4632afbfcd2b95856670);
+                var html_a25788392f2841e5bafd6e5e914b568c = $('<div id="html_a25788392f2841e5bafd6e5e914b568c" style="width: 100.0%; height: 100.0%;">Anchor Point<br>msw stars: 5<br>wave height: 2.6ft @ 16s<br>wind speed: 5mph</div>')[0];
+                popup_e4c79c97d2c14c63a854759e4cf2c22e.setContent(html_a25788392f2841e5bafd6e5e914b568c);
             
 
-            circle_marker_d92830f4f2474f1b9fcfc0950208001e.bindPopup(popup_bc7541a3bfc040a1876f517f1620e9b7);
+            circle_8f17d181d6ab4a8ba243d87c64446cea.bindPopup(popup_e4c79c97d2c14c63a854759e4cf2c22e);
 
             
         
     
-            var circle_marker_bb7e46bebeeb45828b2188bf2c206c8d = L.circleMarker(
+
+            var marker_c0dff357b87b48a79417d21087c6cd48 = L.marker(
+                [30.545198,-9.726952],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_be083d861c1242c0a53d01179c5f6aea = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_c0dff357b87b48a79417d21087c6cd48.setIcon(custom_icon_be083d861c1242c0a53d01179c5f6aea);
+            
+    
+
+            var circle_2ac1936548f8432ea2a472a6b0dbd829 = L.circle(
                 [32.320337,-9.259578],
                 {
   "bubblingMouseEvents": true,
@@ -703,26 +1198,52 @@
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 19.10601999370879,
+  "radius": 9.629832812671257,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_a230ebbc03204a1fb5c8ff3619568a2e = L.popup({maxWidth: '300'});
+            var popup_5e6188a613204b06840ad49853251303 = L.popup({maxWidth: '300'});
 
             
-                var html_b1a7bc139ae74c44b13ff61157702830 = $('<div id="html_b1a7bc139ae74c44b13ff61157702830" style="width: 100.0%; height: 100.0%;">Safi<br>msw stars: 5<br>wave height: 6.0ft @ 20s</div>')[0];
-                popup_a230ebbc03204a1fb5c8ff3619568a2e.setContent(html_b1a7bc139ae74c44b13ff61157702830);
+                var html_74efdf0433b44cff972a9e868d9ed59d = $('<div id="html_74efdf0433b44cff972a9e868d9ed59d" style="width: 100.0%; height: 100.0%;">Safi<br>msw stars: 5<br>wave height: 3.8ft @ 16s<br>wind speed: 12mph</div>')[0];
+                popup_5e6188a613204b06840ad49853251303.setContent(html_74efdf0433b44cff972a9e868d9ed59d);
             
 
-            circle_marker_bb7e46bebeeb45828b2188bf2c206c8d.bindPopup(popup_a230ebbc03204a1fb5c8ff3619568a2e);
+            circle_2ac1936548f8432ea2a472a6b0dbd829.bindPopup(popup_5e6188a613204b06840ad49853251303);
 
             
         
     
-            var circle_marker_5b9af99304c44211b96a4b88dfc0f197 = L.circleMarker(
+
+            var marker_79c91f5d4a164bc5878759852b068d15 = L.marker(
+                [32.320337,-9.259578],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_d74a25f999bb430c92658bcba33ee669 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_79c91f5d4a164bc5878759852b068d15.setIcon(custom_icon_d74a25f999bb430c92658bcba33ee669);
+            
+    
+
+            var circle_8ff382cdf8d94640b02d357136a2297f = L.circle(
                 [30.574813,-9.751053],
                 {
   "bubblingMouseEvents": true,
@@ -730,32 +1251,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#7f0000",
+  "fillColor": "#f16d4b",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 0.21361179742701483,
+  "radius": 0.0,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_f41862c037e644279c6042aa8ca08c7f = L.popup({maxWidth: '300'});
+            var popup_31dd5d82c59a476bbc5ac153b1eafce7 = L.popup({maxWidth: '300'});
 
             
-                var html_1979254bcbbd42888ae80085d92b08fa = $('<div id="html_1979254bcbbd42888ae80085d92b08fa" style="width: 100.0%; height: 100.0%;">Boilers<br>msw stars: 5<br>wave height: 0.30000000000000004ft @ 21s</div>')[0];
-                popup_f41862c037e644279c6042aa8ca08c7f.setContent(html_1979254bcbbd42888ae80085d92b08fa);
+                var html_17b116f217734c358b29e3ee7d982a0f = $('<div id="html_17b116f217734c358b29e3ee7d982a0f" style="width: 100.0%; height: 100.0%;">Boilers<br>msw stars: 3<br>wave height: 0.0ft @ 16s<br>wind speed: 35mph</div>')[0];
+                popup_31dd5d82c59a476bbc5ac153b1eafce7.setContent(html_17b116f217734c358b29e3ee7d982a0f);
             
 
-            circle_marker_5b9af99304c44211b96a4b88dfc0f197.bindPopup(popup_f41862c037e644279c6042aa8ca08c7f);
+            circle_8ff382cdf8d94640b02d357136a2297f.bindPopup(popup_31dd5d82c59a476bbc5ac153b1eafce7);
 
             
         
     
-            var circle_marker_4a09028b50ba4e4bbd6cd7cc7bd2e3d5 = L.circleMarker(
+
+            var marker_dd88862bfa6c439fb91715f11ea23b44 = L.marker(
+                [30.574813,-9.751053],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_7ee75dc899d54faba13bd264a38a4321 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_dd88862bfa6c439fb91715f11ea23b44.setIcon(custom_icon_7ee75dc899d54faba13bd264a38a4321);
+            
+    
+
+            var circle_414669d7f8844ac799e51800eecad5cb = L.circle(
                 [54.470530000000004,-8.448408],
                 {
   "bubblingMouseEvents": true,
@@ -773,22 +1320,48 @@
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_1dcf584b852a4e72a3980edf357def99 = L.popup({maxWidth: '300'});
+            var popup_cec12087c86a403686f9f1c7e4d63250 = L.popup({maxWidth: '300'});
 
             
-                var html_5728ea404c0441d1b594ae0767553fe9 = $('<div id="html_5728ea404c0441d1b594ae0767553fe9" style="width: 100.0%; height: 100.0%;">Mullaghmore<br>msw stars: 2<br>wave height: 5.5ft @ 15s</div>')[0];
-                popup_1dcf584b852a4e72a3980edf357def99.setContent(html_5728ea404c0441d1b594ae0767553fe9);
+                var html_a2ee204a938b49b7b813b86763a36348 = $('<div id="html_a2ee204a938b49b7b813b86763a36348" style="width: 100.0%; height: 100.0%;">Mullaghmore<br>msw stars: 2<br>wave height: 5.5ft @ 13s<br>wind speed: 51mph</div>')[0];
+                popup_cec12087c86a403686f9f1c7e4d63250.setContent(html_a2ee204a938b49b7b813b86763a36348);
             
 
-            circle_marker_4a09028b50ba4e4bbd6cd7cc7bd2e3d5.bindPopup(popup_1dcf584b852a4e72a3980edf357def99);
+            circle_414669d7f8844ac799e51800eecad5cb.bindPopup(popup_cec12087c86a403686f9f1c7e4d63250);
 
             
         
     
-            var circle_marker_0bab134adb594de99afa72420abcd373 = L.circleMarker(
+
+            var marker_52490d068dda4046863a5a7c0f8d158d = L.marker(
+                [54.470530000000004,-8.448408],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_d667e5d3db4f4a2892e7795c0122426c = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_52490d068dda4046863a5a7c0f8d158d.setIcon(custom_icon_d667e5d3db4f4a2892e7795c0122426c);
+            
+    
+
+            var circle_18a1b0f139a54d079e9eee8b20d62bd7 = L.circle(
                 [-8.815066,115.08835900000001],
                 {
   "bubblingMouseEvents": true,
@@ -796,7 +1369,7 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fcb17b",
+  "fillColor": "#fddcae",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
@@ -806,22 +1379,48 @@
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_4174dcb262f34889a013519b6faf6a96 = L.popup({maxWidth: '300'});
+            var popup_d54d211a3c7a4f0d9039f511effa54d4 = L.popup({maxWidth: '300'});
 
             
-                var html_0977dfd0875443aeabd67c56e9012e03 = $('<div id="html_0977dfd0875443aeabd67c56e9012e03" style="width: 100.0%; height: 100.0%;">Uluwatu<br>msw stars: 2<br>wave height: 0.0ft @ 14s</div>')[0];
-                popup_4174dcb262f34889a013519b6faf6a96.setContent(html_0977dfd0875443aeabd67c56e9012e03);
+                var html_bd0f7b4727044850bfa1211298afd452 = $('<div id="html_bd0f7b4727044850bfa1211298afd452" style="width: 100.0%; height: 100.0%;">Uluwatu<br>msw stars: 1<br>wave height: 0.0ft @ 13s<br>wind speed: 27mph</div>')[0];
+                popup_d54d211a3c7a4f0d9039f511effa54d4.setContent(html_bd0f7b4727044850bfa1211298afd452);
             
 
-            circle_marker_0bab134adb594de99afa72420abcd373.bindPopup(popup_4174dcb262f34889a013519b6faf6a96);
+            circle_18a1b0f139a54d079e9eee8b20d62bd7.bindPopup(popup_d54d211a3c7a4f0d9039f511effa54d4);
 
             
         
     
-            var circle_marker_84b6b5e2821c432fadfe4e2b5126e405 = L.circleMarker(
+
+            var marker_11a6296d81404930be72e854f3ea29e2 = L.marker(
+                [-8.815066,115.08835900000001],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_ef13161575a544aca87d4f03e6c518ff = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_11a6296d81404930be72e854f3ea29e2.setIcon(custom_icon_ef13161575a544aca87d4f03e6c518ff);
+            
+    
+
+            var circle_2b1b8957d0764db494c28abbd51a7821 = L.circle(
                 [-8.810744,115.102419],
                 {
   "bubblingMouseEvents": true,
@@ -829,7 +1428,7 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fcb17b",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
@@ -839,22 +1438,48 @@
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_258c47b202e24a1fa28718083cf153f4 = L.popup({maxWidth: '300'});
+            var popup_0d0a0abe673041959ef14c271cf174ef = L.popup({maxWidth: '300'});
 
             
-                var html_46d2d44f48a640fc986c41a4b7b2c568 = $('<div id="html_46d2d44f48a640fc986c41a4b7b2c568" style="width: 100.0%; height: 100.0%;">Padang Padang<br>msw stars: 2<br>wave height: 0.0ft @ 14s</div>')[0];
-                popup_258c47b202e24a1fa28718083cf153f4.setContent(html_46d2d44f48a640fc986c41a4b7b2c568);
+                var html_b87e77bc66f342a3932cd3fd55556568 = $('<div id="html_b87e77bc66f342a3932cd3fd55556568" style="width: 100.0%; height: 100.0%;">Padang Padang<br>msw stars: 0<br>wave height: 0.0ft @ 13s<br>wind speed: 27mph</div>')[0];
+                popup_0d0a0abe673041959ef14c271cf174ef.setContent(html_b87e77bc66f342a3932cd3fd55556568);
             
 
-            circle_marker_84b6b5e2821c432fadfe4e2b5126e405.bindPopup(popup_258c47b202e24a1fa28718083cf153f4);
+            circle_2b1b8957d0764db494c28abbd51a7821.bindPopup(popup_0d0a0abe673041959ef14c271cf174ef);
 
             
         
     
-            var circle_marker_34a603dafde94e8bbfc8384acb5d9e73 = L.circleMarker(
+
+            var marker_8d0d820b037b4cd5afcfb87ef47964be = L.marker(
+                [-8.810744,115.102419],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_93e3cd6821fc4285a81fab5c86ed9670 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_8d0d820b037b4cd5afcfb87ef47964be.setIcon(custom_icon_93e3cd6821fc4285a81fab5c86ed9670);
+            
+    
+
+            var circle_31f2f54f6f514537825455c43870dd2f = L.circle(
                 [-8.806524000000001,115.111984],
                 {
   "bubblingMouseEvents": true,
@@ -862,32 +1487,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fcb17b",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 3.139439440409705,
+  "radius": 2.388252499213599,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_cc72767e267e43d2906ba9247a1d19ae = L.popup({maxWidth: '300'});
+            var popup_2a36574e36e14976966e286d6494e8ef = L.popup({maxWidth: '300'});
 
             
-                var html_35c3a0440e3c489ca94f43bc58374612 = $('<div id="html_35c3a0440e3c489ca94f43bc58374612" style="width: 100.0%; height: 100.0%;">Impossibles<br>msw stars: 2<br>wave height: 1.8ft @ 14s</div>')[0];
-                popup_cc72767e267e43d2906ba9247a1d19ae.setContent(html_35c3a0440e3c489ca94f43bc58374612);
+                var html_bf4b07c43f704f23bef00562c5128235 = $('<div id="html_bf4b07c43f704f23bef00562c5128235" style="width: 100.0%; height: 100.0%;">Impossibles<br>msw stars: 0<br>wave height: 1.5ft @ 13s<br>wind speed: 27mph</div>')[0];
+                popup_2a36574e36e14976966e286d6494e8ef.setContent(html_bf4b07c43f704f23bef00562c5128235);
             
 
-            circle_marker_34a603dafde94e8bbfc8384acb5d9e73.bindPopup(popup_cc72767e267e43d2906ba9247a1d19ae);
+            circle_31f2f54f6f514537825455c43870dd2f.bindPopup(popup_2a36574e36e14976966e286d6494e8ef);
 
             
         
     
-            var circle_marker_1567c5be0b04466b9505a6339e5c9e1d = L.circleMarker(
+
+            var marker_87f8e7834db845f793c0795c8e2192f3 = L.marker(
+                [-8.806524000000001,115.111984],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_155d1c23c65d4f819bf6e0246c090b90 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_87f8e7834db845f793c0795c8e2192f3.setIcon(custom_icon_155d1c23c65d4f819bf6e0246c090b90);
+            
+    
+
+            var circle_cbd964fc0acd4404a583a3459ee6715d = L.circle(
                 [-8.805705,115.112971],
                 {
   "bubblingMouseEvents": true,
@@ -895,7 +1546,7 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fcb17b",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
@@ -905,22 +1556,48 @@
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_6137d182a1a84003a5b338df25a8dcbc = L.popup({maxWidth: '300'});
+            var popup_37805164dbc9499286bfc28b7ae22a98 = L.popup({maxWidth: '300'});
 
             
-                var html_c26ad9816b3e4cb594b73d1d5c80eb85 = $('<div id="html_c26ad9816b3e4cb594b73d1d5c80eb85" style="width: 100.0%; height: 100.0%;">Bingin<br>msw stars: 2<br>wave height: 0.0ft @ 14s</div>')[0];
-                popup_6137d182a1a84003a5b338df25a8dcbc.setContent(html_c26ad9816b3e4cb594b73d1d5c80eb85);
+                var html_4a786560d68c41d5b739e5be94f3ab55 = $('<div id="html_4a786560d68c41d5b739e5be94f3ab55" style="width: 100.0%; height: 100.0%;">Bingin<br>msw stars: 0<br>wave height: 0.0ft @ 13s<br>wind speed: 27mph</div>')[0];
+                popup_37805164dbc9499286bfc28b7ae22a98.setContent(html_4a786560d68c41d5b739e5be94f3ab55);
             
 
-            circle_marker_1567c5be0b04466b9505a6339e5c9e1d.bindPopup(popup_6137d182a1a84003a5b338df25a8dcbc);
+            circle_cbd964fc0acd4404a583a3459ee6715d.bindPopup(popup_37805164dbc9499286bfc28b7ae22a98);
 
             
         
     
-            var circle_marker_570ea5c33be94961b68226e558107c24 = L.circleMarker(
+
+            var marker_f43ab56781834baaa26b670c100cfee8 = L.marker(
+                [-8.805705,115.112971],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_66989302bb4d43a4a64c49c29012b3ca = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_f43ab56781834baaa26b670c100cfee8.setIcon(custom_icon_66989302bb4d43a4a64c49c29012b3ca);
+            
+    
+
+            var circle_e4bd89f94f684de08d94fd54361bf044 = L.circle(
                 [-8.793439999999999,115.122231],
                 {
   "bubblingMouseEvents": true,
@@ -928,32 +1605,58 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#fcb17b",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
   "lineJoin": "round",
   "opacity": 1.0,
-  "radius": 2.6310150132600922,
+  "radius": 2.15345304104826,
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_68d013d01fd4469db26ea6a479dd7f84 = L.popup({maxWidth: '300'});
+            var popup_3edcba09e5a644feaa6f5726c25518c8 = L.popup({maxWidth: '300'});
 
             
-                var html_3756eec53d774b14a3e5e52fc08cf09c = $('<div id="html_3756eec53d774b14a3e5e52fc08cf09c" style="width: 100.0%; height: 100.0%;">Balangan<br>msw stars: 2<br>wave height: 1.6ft @ 14s</div>')[0];
-                popup_68d013d01fd4469db26ea6a479dd7f84.setContent(html_3756eec53d774b14a3e5e52fc08cf09c);
+                var html_90d3e7bd74d642fb958a9f60a69c437a = $('<div id="html_90d3e7bd74d642fb958a9f60a69c437a" style="width: 100.0%; height: 100.0%;">Balangan<br>msw stars: 0<br>wave height: 1.4ft @ 13s<br>wind speed: 27mph</div>')[0];
+                popup_3edcba09e5a644feaa6f5726c25518c8.setContent(html_90d3e7bd74d642fb958a9f60a69c437a);
             
 
-            circle_marker_570ea5c33be94961b68226e558107c24.bindPopup(popup_68d013d01fd4469db26ea6a479dd7f84);
+            circle_e4bd89f94f684de08d94fd54361bf044.bindPopup(popup_3edcba09e5a644feaa6f5726c25518c8);
 
             
         
     
-            var circle_marker_f45ec946dd5d4bcbaac6fbb0cec9af82 = L.circleMarker(
+
+            var marker_737c521739cf4bb98aec2f664ead27e8 = L.marker(
+                [-8.793439999999999,115.122231],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_b2d8d6882cc0456684eae5003a548b5f = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_737c521739cf4bb98aec2f664ead27e8.setIcon(custom_icon_b2d8d6882cc0456684eae5003a548b5f);
+            
+    
+
+            var circle_9a3aaf04a5024b5da2b03a29d929eeb6 = L.circle(
                 [-8.737046000000001,115.156745],
                 {
   "bubblingMouseEvents": true,
@@ -961,106 +1664,7 @@
   "dashArray": null,
   "dashOffset": null,
   "fill": true,
-  "fillColor": "#f16d4b",
-  "fillOpacity": 0.7,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 2.6310150132600922,
-  "stroke": true,
-  "weight": 3
-}
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
-            
-    
-            var popup_ca1895d9c1f345f186ddb17a003a530c = L.popup({maxWidth: '300'});
-
-            
-                var html_d7f96dfe62534bdf8c0fb8e929ae6e9b = $('<div id="html_d7f96dfe62534bdf8c0fb8e929ae6e9b" style="width: 100.0%; height: 100.0%;">Kuta Reef<br>msw stars: 3<br>wave height: 1.6ft @ 14s</div>')[0];
-                popup_ca1895d9c1f345f186ddb17a003a530c.setContent(html_d7f96dfe62534bdf8c0fb8e929ae6e9b);
-            
-
-            circle_marker_f45ec946dd5d4bcbaac6fbb0cec9af82.bindPopup(popup_ca1895d9c1f345f186ddb17a003a530c);
-
-            
-        
-    
-            var circle_marker_a2d688825ea0474f8e9c78a57ae46adf = L.circleMarker(
-                [-8.713434,115.167452],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "#f16d4b",
-  "fillOpacity": 0.7,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 3.139439440409705,
-  "stroke": true,
-  "weight": 3
-}
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
-            
-    
-            var popup_3ae22084daf24532b1a2240ae67e69c7 = L.popup({maxWidth: '300'});
-
-            
-                var html_d3fea02b64974cca9a0fa3ad79505356 = $('<div id="html_d3fea02b64974cca9a0fa3ad79505356" style="width: 100.0%; height: 100.0%;">Kuta Beach<br>msw stars: 3<br>wave height: 1.8ft @ 14s</div>')[0];
-                popup_3ae22084daf24532b1a2240ae67e69c7.setContent(html_d3fea02b64974cca9a0fa3ad79505356);
-            
-
-            circle_marker_a2d688825ea0474f8e9c78a57ae46adf.bindPopup(popup_3ae22084daf24532b1a2240ae67e69c7);
-
-            
-        
-    
-            var circle_marker_a404983e91894915b829b12b7440e3e3 = L.circleMarker(
-                [-8.653674,115.12342],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "#f16d4b",
-  "fillOpacity": 0.7,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 3.6769552621700474,
-  "stroke": true,
-  "weight": 3
-}
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
-            
-    
-            var popup_e7f28836047e4139a4daac81b6061575 = L.popup({maxWidth: '300'});
-
-            
-                var html_504d0a167eb14340aae2c4d13261f9af = $('<div id="html_504d0a167eb14340aae2c4d13261f9af" style="width: 100.0%; height: 100.0%;">Canggu Rights<br>msw stars: 3<br>wave height: 2.0ft @ 14s</div>')[0];
-                popup_e7f28836047e4139a4daac81b6061575.setContent(html_504d0a167eb14340aae2c4d13261f9af);
-            
-
-            circle_marker_a404983e91894915b829b12b7440e3e3.bindPopup(popup_e7f28836047e4139a4daac81b6061575);
-
-            
-        
-    
-            var circle_marker_3e024845d01a4a65a14d35a045b35660 = L.circleMarker(
-                [-8.597974,115.339335],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "#c81c12",
+  "fillColor": "#fff7ec",
   "fillOpacity": 0.7,
   "fillRule": "evenodd",
   "lineCap": "round",
@@ -1070,18 +1674,220 @@
   "stroke": true,
   "weight": 3
 }
-                ).addTo(map_61663b3260a048b8abff5dce5efc7d10);
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
             
     
-            var popup_2e624f42b64d4741a148732941d4f13b = L.popup({maxWidth: '300'});
+            var popup_9f3200ac68ab4fc0916a45f6dff59772 = L.popup({maxWidth: '300'});
 
             
-                var html_b6c6284da7fd48b0b4793a609b0e0ace = $('<div id="html_b6c6284da7fd48b0b4793a609b0e0ace" style="width: 100.0%; height: 100.0%;">Keramas<br>msw stars: 4<br>wave height: 1.3ft @ 14s</div>')[0];
-                popup_2e624f42b64d4741a148732941d4f13b.setContent(html_b6c6284da7fd48b0b4793a609b0e0ace);
+                var html_1b5883f7e29a4c79be7f25fe12be818d = $('<div id="html_1b5883f7e29a4c79be7f25fe12be818d" style="width: 100.0%; height: 100.0%;">Kuta Reef<br>msw stars: 0<br>wave height: 1.3ft @ 13s<br>wind speed: 8mph</div>')[0];
+                popup_9f3200ac68ab4fc0916a45f6dff59772.setContent(html_1b5883f7e29a4c79be7f25fe12be818d);
             
 
-            circle_marker_3e024845d01a4a65a14d35a045b35660.bindPopup(popup_2e624f42b64d4741a148732941d4f13b);
+            circle_9a3aaf04a5024b5da2b03a29d929eeb6.bindPopup(popup_9f3200ac68ab4fc0916a45f6dff59772);
 
             
         
+    
+
+            var marker_8a114cbb96114a9cae8f7778fda7204a = L.marker(
+                [-8.737046000000001,115.156745],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_0499e80bf0cf4f6fb65e2f563b19849f = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_8a114cbb96114a9cae8f7778fda7204a.setIcon(custom_icon_0499e80bf0cf4f6fb65e2f563b19849f);
+            
+    
+
+            var circle_f8e0756d8d714f5bb7557426694f2609 = L.circle(
+                [-8.713434,115.167452],
+                {
+  "bubblingMouseEvents": true,
+  "color": null,
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#fddcae",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 2.6310150132600922,
+  "stroke": true,
+  "weight": 3
+}
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+            var popup_d0282c3980374c678afd62f831599d71 = L.popup({maxWidth: '300'});
+
+            
+                var html_f04beadf6b67470199b45ffe0667ac44 = $('<div id="html_f04beadf6b67470199b45ffe0667ac44" style="width: 100.0%; height: 100.0%;">Kuta Beach<br>msw stars: 1<br>wave height: 1.6ft @ 13s<br>wind speed: 8mph</div>')[0];
+                popup_d0282c3980374c678afd62f831599d71.setContent(html_f04beadf6b67470199b45ffe0667ac44);
+            
+
+            circle_f8e0756d8d714f5bb7557426694f2609.bindPopup(popup_d0282c3980374c678afd62f831599d71);
+
+            
+        
+    
+
+            var marker_778fc6cf308e47ba9b74b623c2a488cc = L.marker(
+                [-8.713434,115.167452],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_894b0f3fc53941a5a082753886973d8d = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_778fc6cf308e47ba9b74b623c2a488cc.setIcon(custom_icon_894b0f3fc53941a5a082753886973d8d);
+            
+    
+
+            var circle_e6a8fffa071f441a9b6bdd3ca5c1d38a = L.circle(
+                [-8.653674,115.12342],
+                {
+  "bubblingMouseEvents": true,
+  "color": null,
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#fddcae",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 2.881487463099571,
+  "stroke": true,
+  "weight": 3
+}
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+            var popup_ab6aba643a67441a9bfd958357a02f38 = L.popup({maxWidth: '300'});
+
+            
+                var html_bc4ac961e7c24da58c27b145ca8ee60d = $('<div id="html_bc4ac961e7c24da58c27b145ca8ee60d" style="width: 100.0%; height: 100.0%;">Canggu Rights<br>msw stars: 1<br>wave height: 1.7000000000000002ft @ 13s<br>wind speed: 8mph</div>')[0];
+                popup_ab6aba643a67441a9bfd958357a02f38.setContent(html_bc4ac961e7c24da58c27b145ca8ee60d);
+            
+
+            circle_e6a8fffa071f441a9b6bdd3ca5c1d38a.bindPopup(popup_ab6aba643a67441a9bfd958357a02f38);
+
+            
+        
+    
+
+            var marker_54f468388ff04b28a46052c236d6f83c = L.marker(
+                [-8.653674,115.12342],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_2bd6425e5c6749f5846be585f2c62560 = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_54f468388ff04b28a46052c236d6f83c.setIcon(custom_icon_2bd6425e5c6749f5846be585f2c62560);
+            
+    
+
+            var circle_032fe03cb47542728b347e1e0fba468d = L.circle(
+                [-8.597974,115.339335],
+                {
+  "bubblingMouseEvents": true,
+  "color": null,
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#f16d4b",
+  "fillOpacity": 0.7,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 1.499796652883317,
+  "stroke": true,
+  "weight": 3
+}
+                ).addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+            var popup_3ae1a7432ee24c239b3233267492acc3 = L.popup({maxWidth: '300'});
+
+            
+                var html_d4f85a91de6a4103b58d22f7c27c4704 = $('<div id="html_d4f85a91de6a4103b58d22f7c27c4704" style="width: 100.0%; height: 100.0%;">Keramas<br>msw stars: 3<br>wave height: 1.1ft @ 13s<br>wind speed: 13mph</div>')[0];
+                popup_3ae1a7432ee24c239b3233267492acc3.setContent(html_d4f85a91de6a4103b58d22f7c27c4704);
+            
+
+            circle_032fe03cb47542728b347e1e0fba468d.bindPopup(popup_3ae1a7432ee24c239b3233267492acc3);
+
+            
+        
+    
+
+            var marker_78304b59f5d04724870372eb55183957 = L.marker(
+                [-8.597974,115.339335],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_dfbe35521ce34bef8f97b3363402a1fd);
+            
+    
+
+                var custom_icon_b85066ff17a2489abfa6231b35ccd9cf = L.icon({
+                    iconUrl: '/Users/howardriddiough/Documents/msw/arrow/arrow_temp.png',
+                    iconSize: [30,30],
+                    
+
+                    
+                    
+                    
+
+                    
+                    });
+                marker_78304b59f5d04724870372eb55183957.setIcon(custom_icon_b85066ff17a2489abfa6231b35ccd9cf);
+            
 </script>
