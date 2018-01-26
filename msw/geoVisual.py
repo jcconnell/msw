@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import os
 import webbrowser
+from PIL import Image
 
 def calcColors(values : pd.Series):
     """
@@ -45,6 +46,19 @@ def calcSize(values : pd.Series):
     sizes = np.where(values < 16, ((values**3)**0.5)*1.3, ((17**3)**0.5)*1.3)
                               
     return sizes.tolist()
+
+def rotateCustomIcon(rotation : int):
+    output_image = os.path.abspath('../arrow/arrow_temp.png')
+    # Load arrow
+    image = Image.open(os.path.abspath('../arrow/arrow.png'))
+    # Rotate
+    image = image.rotate(rotation, expand=True)
+    # Save image
+    image.save(output_image)
+    # Create folium custom icon
+    icon = folium.features.CustomIcon(output_image, icon_size=(50, 50))
+    
+    return icon    
     
 def drawSurfMap(df : pd.DataFrame):
     """
@@ -73,21 +87,27 @@ def drawSurfMap(df : pd.DataFrame):
     
     # Add a cirlce marker for each spot
     for i, row in df.iterrows():
+        # Add an arrow to map pointing in direction of the wind
+#        folium.Marker(location=[row.longitude, row.latitude],
+#                      icon=rotateCustomIcon(rotation=row.direction),
+#                      ).add_to(m)
         # Define popup text
         popup = (row['spot'] + 
-                 '<br>msw stars: ' + str(row['solidRating']) + 
-                 '<br>wave height: ' + str(row['maxBreakingHeight']) + 'ft' +
-                 ' @ ' + str(row['period']) + 's')
+                 '<br>msw stars: ' + str(row.solidRating) + 
+                 '<br>wave height: ' + str(row.maxBreakingHeight) + 'ft' +
+                 ' @ ' + str(row.period) + 's' +
+                 '<br>wind speed: ' + str(row.speed) + 'mph')
         # Add CircleMarker to map for each spot
-        folium.CircleMarker(location=[row['longitude'], row['latitude']],
+        folium.CircleMarker(location=[row.longitude, row.latitude],
                             radius=sizes[i], 
                             fill=True, 
                             popup=popup, 
-                            #weight=1,
                             fill_color=colors[i],
                             color=None,
                             fill_opacity=0.7
                             ).add_to(m)
+        
+
     # Save map as html
     m.save('../index.html')
     # Open html file in web browser
