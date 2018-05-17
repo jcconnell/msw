@@ -1,9 +1,9 @@
 # msw
 
 ## Introduction
-msw is a tool that uses the Magicseaweed forecast api to create a web based interactive geographic visulisation of the current surf forecast. The website can be found [here](https://howardriddiough.github.io/msw/).
+msw is a tool that uses the Magicseaweed forecast api to create a web based interactive geographic visulisation of the current surf forecast. The website can be found [here](https://jcconnell.github.io/msw/).
 
-The visulisation includes a bubble for every surf spot listed in [surf_spots.csv](https://github.com/HowardRiddiough/msw/blob/master/data/surfspots.csv). The size of the bubble is determined by the actual wave height and the bubble's color intensity determined by the number of solid stars as provided by Magicseaweed. Each bubble can be clicked to show more information about the surf spot and it's respective foreacst. The idea being to show clearly in one view where the best location to surf at a given moment in time is.
+The visulisation includes a bubble for every surf spot listed in [surf_spots.csv](https://github.com/jcconnell/msw/blob/master/data/surfspots.csv). The size of the bubble is determined by the actual wave height and the bubble's color intensity determined by the number of solid stars as provided by Magicseaweed. Each bubble can be clicked to show more information about the surf spot and it's respective foreacst. The idea being to show clearly in one view where the best location to surf at a given moment in time is.
 
 msw is powered by Magicseaweed's forecast api, more information can be found [here](https://magicseaweed.com/developer/api).
 
@@ -35,3 +35,4 @@ In case you encounter bugs please submit a new issue on [github](https://github.
 
 ## Contributors
 [HowardRiddiough](https://github.com/HowardRiddiough)
+[jcconnell](https://github.com/jcconnell)
