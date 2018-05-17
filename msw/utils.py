@@ -4,12 +4,12 @@ import datetime as dt
 def dictToSeries(df : pd.DataFrame, column : str):
     """
     Parses column with a dict to pandas series
-    
+
     Parameters
     --------
     df : DataFrame containing dictionary, pd.DataFrame
     column : Column in DataFrame that contains the dictionary, str
-    
+
     Returns
     --------
     df : pd.DataFrame
@@ -17,18 +17,18 @@ def dictToSeries(df : pd.DataFrame, column : str):
     # Convert those columns with dictionaries in each row to pd.Series
     df = pd.concat([df, df[column].apply(pd.Series)], axis=1)
     df = df.drop(column, axis=1)
-    
+
     return df
 
 def parsePeriod(df : pd.DataFrame, column : str):
     """
     Function specifically built to parse period field from MSW api.
-    
+
     Parameters
     --------
     df : DataFrame containing dictionary, pd.DataFrame
     column : Column in DataFrame that contains period field, str
-    
+
     Returns
     --------
     df : pd.DataFrame
@@ -38,21 +38,21 @@ def parsePeriod(df : pd.DataFrame, column : str):
     df[column] = df[column].apply(pd.Series)
     # Rename colum to period
     df= df.rename(columns={column:'period'})
-    
+
     return df
 
 def processJson(target_url : str, spot_name : str, longitude : int,
                 latitude : int):
     """
-    Returns pandas DataFrame as read of json in MSW api with 2 new columns 
-    (spot & weekday). DataFrame limited to "good" surf only and days defined 
+    Returns pandas DataFrame as read of json in MSW api with 2 new columns
+    (spot & weekday). DataFrame limited to "good" surf only and days defined
     in msw_config.
-    
+
     Parameters
     --------
     target_url : the api target, str
     spot_name : name of surf spot
-    
+
     Returns
     --------
     df : DataFrame with fields specified in targetUrl, pd.DataFrame
@@ -83,20 +83,20 @@ def processJson(target_url : str, spot_name : str, longitude : int,
     df = parsePeriod(df=df, column='components')
     # Select only days with a "good" swell
 #    df = df[(df.solidRating >= 3)]
-            
+
     # Reset index
     df = df.reset_index(drop=True)
-    
+
     return df
 
 def scrapeSurfSpots(spots : pd.DataFrame):
     """
-    loops through surf_spots and scrapes each json table from its respective 
+    loops through surf_spots and scrapes each json table from its respective
     api using processJson() and returns a DataFrame with all json tables concatenated.
     Parameters
     --------
     spots : DataFrame with spot name, longitude, latitude and spot id
-    
+
     Returns
     --------
     df : DataFrame containing all relevant surf forecasts for each spot in
@@ -112,7 +112,6 @@ def scrapeSurfSpots(spots : pd.DataFrame):
                                         spot_name=row.spot,
                                         longitude=row.longitude,
                                         latitude=row.latitude)])
-        # Reset Index 
+        # Reset Index
         df = df.reset_index(drop=True)
-        
     return df
