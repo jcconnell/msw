@@ -84,7 +84,7 @@ def drawSurfMap(df : pd.DataFrame):
     sizes = calcSize(df['maxBreakingHeight'])
 
     # Intialise folium
-    m = folium.Map([50, 0], zoom_start=3.5, tiles='cartodbpositron')
+    m = folium.Map([26, -40], zoom_start=3.5, tiles='cartodbpositron')
 
     # Add a cirlce marker for each spot
     for i, row in df.iterrows():

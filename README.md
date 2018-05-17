@@ -34,5 +34,5 @@ In order to run this code you will need to have the following packages:
 In case you encounter bugs please submit a new issue on [github](https://github.com/HowardRiddiough/msw/issues). Please list the reported error and data used that will help us reconstruct it. This will help us reproduce and resolve the bug.
 
 ## Contributors
-[HowardRiddiough](https://github.com/HowardRiddiough)
+[HowardRiddiough](https://github.com/HowardRiddiough)  
 [jcconnell](https://github.com/jcconnell)
